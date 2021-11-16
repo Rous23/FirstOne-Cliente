@@ -13,7 +13,6 @@ import { RegistroComponent } from './registro/registro.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { CategoriasComponent } from './categorias/categorias.component';
-import { EmpresasComponent } from './empresas/empresas.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { InformacionPerfilComponent } from './informacion-perfil/informacion-perfil.component';
 import { EmpresasFavoritasComponent } from './empresas-favoritas/empresas-favoritas.component';
@@ -27,6 +26,10 @@ import { CompraExitosaComponent } from './compra-exitosa/compra-exitosa.componen
 import { ConfirmarCompraComponent } from './confirmar-compra/confirmar-compra.component';
 import { ItemCarritoComponent } from './item-carrito/item-carrito.component';
 import { FormularioCompraComponent } from './formulario-compra/formulario-compra.component';
+import { EmpresasCategoriaComponent } from './empresas-categoria/empresas-categoria.component';
+import { EmpresaProductosComponent } from './empresa-productos/empresa-productos.component';
+import { ProductosComponent } from './productos/productos.component';
+import { ItemEmpresaHomeComponent } from './item-empresa-home/item-empresa-home.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,6 @@ import { FormularioCompraComponent } from './formulario-compra/formulario-compra
     HomeComponent,
     FooterComponent,
     CategoriasComponent,
-    EmpresasComponent,
     PerfilComponent,
     InformacionPerfilComponent,
     EmpresasFavoritasComponent,
@@ -51,7 +53,11 @@ import { FormularioCompraComponent } from './formulario-compra/formulario-compra
     CompraExitosaComponent,
     ConfirmarCompraComponent,
     ItemCarritoComponent,
-    FormularioCompraComponent
+    FormularioCompraComponent,
+    EmpresasCategoriaComponent,
+    EmpresaProductosComponent,
+    ProductosComponent,
+    ItemEmpresaHomeComponent
   ],
   imports: [
     BrowserModule,

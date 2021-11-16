@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-empresas-favoritas',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class EmpresasFavoritasComponent implements OnInit {
 
   constructor() { }
-
+  faTrash = faTrash
   ngOnInit(): void {
   }
 

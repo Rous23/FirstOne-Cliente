@@ -1,47 +1,47 @@
 <div id="contenedor-principal-perfil" class="mt-2 mb-5" style="display: block;">
-    <div class="m-3">
+    <div class="m-3 py-3">
         <h5 style="text-align: left;font-weight: bold;" class="pb-3">Mi Cuenta</h5>
         <div id="datos-personales" class="items-perfil">
             <div>
-                <i class="fas fa-address-card"></i>
+                <fa-icon [icon] = "faAddressCard"></fa-icon>
             </div>
             <div>Datos Personales</div>
             <div style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#modalDatos">
-                <i class="far fa-edit"></i>
+                <fa-icon [icon] = "faEdit"></fa-icon>
             </div>
         </div>
         <div id="tarjetas" class="items-perfil">
             <div>
-                <i class="fas fa-credit-card"></i>
+                <fa-icon [icon] = "faCreditCard"></fa-icon>
             </div>
             <div>Mis tarjetas</div>
             <div style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#modalTarjeta">
-                <i class="far fa-edit"></i>
+                <fa-icon [icon] = "faEdit"></fa-icon>
             </div>
         </div>
         <div id="direccion-entrega" class="items-perfil">
             <div>
-                <i class="fas fa-map-marked-alt"></i>
+                <fa-icon [icon] = "faMapMarketAlt"></fa-icon>
             </div>
             <div>Direcciones</div>
             <div style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#modalDireccion">
-                <i class="far fa-edit"></i>
+                <fa-icon [icon] = "faEdit"></fa-icon>
             </div>
         </div>
         <h5 style="text-align: left;font-weight: bold;" class="pb-3 pt-4">Seguridad</h5>
         <div id="cambio-contrasenia" class="items-perfil">
             <div>
-                <i class="fas fa-key"></i>
+                <fa-icon [icon] = "faKey"></fa-icon>
             </div>
             <div>Cambiar Contraseña</div>
             <div style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#modalContrasenia">
-                <i class="far fa-edit"></i>
+                <fa-icon [icon] = "faEdit"></fa-icon>
             </div>
         </div>
         <h5 style="text-align: left;font-weight: bold;" class="pb-3 pt-4">Otras Acciones</h5>
         <div id="cerrar-sesion" class="items-perfil" style="justify-content: space-around;">
             <div>
-                <i class="fas fa-sign-out-alt"></i>
+                <fa-icon [icon] = "faSingOutAlt"></fa-icon>
             </div>
             <div>Cerrar sesión</div>
         </div>

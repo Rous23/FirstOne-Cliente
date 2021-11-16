@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-ordenes-pendientes',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class OrdenesPendientesComponent implements OnInit {
 
   constructor() { }
-
+  faChevronRight = faChevronRight
   ngOnInit(): void {
   }
 

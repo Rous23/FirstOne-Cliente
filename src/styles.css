@@ -672,12 +672,12 @@ body{
 
 #header-perfil-empresa{
     background-color: rgba(202, 201, 242, 0.4);
-    background-image: url(assets/img/arrow-down.svg);
+    background-image: url(assets/img/Logotipo.svg);
     background-repeat: no-repeat;
     background-position: center;
     border-bottom-left-radius: 35px;
     border-bottom-right-radius: 35px;
-    height: 150px!important;
+    height: 120px!important;
 }
 
 #barra-perfil-empresa{
@@ -693,7 +693,7 @@ body{
 }
 
 #informacion-perfil-empresa{
-    margin-top: 5.5rem;
+    margin-top: 4rem;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
@@ -708,26 +708,25 @@ body{
 
 #contenedor-perfil-empresa{
     padding-top: 1rem;
+    padding-bottom: 80px;
 }
 
 #cards-productos{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
-    flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.item-producto-empresa{
+/* .item-producto-empresa{
     display: flex;
-    flex: none;
-    width: calc((100% - 10px)/3);;
+    flex-direction: row;
     cursor: pointer;
 }
 
 .item-producto-empresa:hover{
     background-color: rgba(254, 185, 73, .50);
-}
+} */
 
 #atras-icon{
     background-color: white;
