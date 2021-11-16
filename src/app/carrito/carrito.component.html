@@ -1,1 +1,25 @@
-<p>carrito works!</p>
+<main id="main-carrito">
+    <app-barra-retroceso></app-barra-retroceso>
+    <div id="titulo-productos">
+        <p id="titulo-carrito">Carrito de compras</p>
+        <div id="productos-carrito">
+            <app-item-carrito></app-item-carrito>
+            <app-item-carrito></app-item-carrito>
+            <app-item-carrito></app-item-carrito>
+            <app-item-carrito></app-item-carrito>
+            <app-item-carrito></app-item-carrito>
+            <app-item-carrito></app-item-carrito>
+            <app-item-carrito></app-item-carrito>
+            <app-item-carrito></app-item-carrito>
+        </div>
+        <div class="fixed-bottom" id="total-carrito">
+            <div id="total">
+                <p id="pagar">Total a pagar</p>
+                <p id="pagar-cantidad">$769.00</p>
+            </div>
+            <div id="siguiente">
+                <button class="btn btn-primary" id="btn-siguiente">Siguiente</button>
+            </div>
+        </div>
+    </div>
+</main>

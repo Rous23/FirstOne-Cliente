@@ -25,6 +25,7 @@ import { OrdenesPendientesComponent } from './ordenes-pendientes/ordenes-pendien
 import { CarritoComponent } from './carrito/carrito.component';
 import { CompraExitosaComponent } from './compra-exitosa/compra-exitosa.component';
 import { ConfirmarCompraComponent } from './confirmar-compra/confirmar-compra.component';
+import { ItemCarritoComponent } from './item-carrito/item-carrito.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ConfirmarCompraComponent } from './confirmar-compra/confirmar-compra.co
     OrdenesPendientesComponent,
     CarritoComponent,
     CompraExitosaComponent,
-    ConfirmarCompraComponent
+    ConfirmarCompraComponent,
+    ItemCarritoComponent
   ],
   imports: [
     BrowserModule,

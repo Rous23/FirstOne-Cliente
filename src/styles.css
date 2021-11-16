@@ -458,7 +458,6 @@ body{
 #productos-carrito{
     display: flex;
     flex-direction: column;
-    align-items: center;
     padding: 5px 20px;
     max-height: 580px;
     overflow-y: scroll;
@@ -468,8 +467,6 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 90%;
-    height: 100px;
     background-color: white;
     box-shadow: 0px 3px 5px rgb(175, 175, 175);
     border-radius: 20px;
@@ -535,6 +532,7 @@ body{
 
 #item-img{
     display: flex;
+    padding: 10px;
 }
 
 #item-textos{
