@@ -1,1 +1,29 @@
-<p>recuperar-contrasenia works!</p>
+<app-barra-retroceso></app-barra-retroceso>
+<main id="main-recuperar-contrasenia" class="container">
+    <div id="logo">
+        <img src="../../assets/img/Logotipo.svg" alt="Logo">
+    </div>
+    <div id="texto-principal" class="mb-3">
+        ¿Olvidaste tu <br> contraseña?
+    </div>
+    <div id="texto-recuperacion">
+        <p>
+            Ingresa tu correo electrónico para enviarte un enlace con el que puedas hacer el cambio de contraseña.
+        </p>
+    </div>
+    <div id="correo-recuperacion"  class="py-2">
+        <form action="">
+            <div class="form-group">
+                <label id="label-correo" for="correoElectronico">Correo electrónico</label>
+                <input id="input-correo" type="email" class="form-control" placeholder="ejemplo@gmail.com">
+            </div>
+            <div class="py-3">
+                <button id="boton-recuperacion" type="button" class="btn btn-primary" href="#">Enviar</button>
+            </div>
+            <div id="texto-ayuda">
+                <h6>¿Aún no recibes el correo? </h6>
+                <h6 id="enviar-correo">Toca para volver a enviar</h6>
+            </div>
+        </form>
+    </div>
+</main>
