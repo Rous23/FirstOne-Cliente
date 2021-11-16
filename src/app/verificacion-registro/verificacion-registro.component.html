@@ -1,0 +1,25 @@
+<app-barra-retroceso></app-barra-retroceso>
+<main id="main-verificacion" class="container">
+    <div id="logo">
+        <img src="../../assets/img/Logotipo.svg" alt="Logo">
+    </div>
+    <div id="texto-principal">Verificación</div>
+    <div id="texto-secundario">
+        <h6>Ingresa el código de verificación que se ha enviado a ejemplo@gmail.com</h6>
+    </div>
+    <div id="formulario-iniciar-sesion">
+        <form>
+            <div id="codigo-verificacion">
+                <input type="number" class="form-control codigo" min="0" max="9">
+                <input type="number" class="form-control codigo" min="0" max="9">
+                <input type="number" class="form-control codigo" min="0" max="9">
+                <input type="number" class="form-control codigo" min="0" max="9">
+            </div>
+            <button id="boton-iniciar-sesion" type="button" class="btn btn-primary" href="#">Verificar</button>
+            <div id="verificacion-texto">
+                <h6>¿Aún no recibes el código? </h6><br>
+                <h6 id="enviar-de-nuevo">Toca para enviar de nuevo</h6>
+            </div>
+        </form>
+    </div>
+</main>

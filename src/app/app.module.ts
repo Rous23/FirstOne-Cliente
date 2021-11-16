@@ -18,6 +18,9 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { InformacionPerfilComponent } from './informacion-perfil/informacion-perfil.component';
 import { EmpresasFavoritasComponent } from './empresas-favoritas/empresas-favoritas.component';
 import { HistorialOrdenesComponent } from './historial-ordenes/historial-ordenes.component';
+import { VerificacionRegistroComponent } from './verificacion-registro/verificacion-registro.component';
+import { RegistroExitosoComponent } from './registro-exitoso/registro-exitoso.component';
+import { RecuperarContraseniaComponent } from './recuperar-contrasenia/recuperar-contrasenia.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { HistorialOrdenesComponent } from './historial-ordenes/historial-ordenes
     PerfilComponent,
     InformacionPerfilComponent,
     EmpresasFavoritasComponent,
-    HistorialOrdenesComponent
+    HistorialOrdenesComponent,
+    VerificacionRegistroComponent,
+    RegistroExitosoComponent,
+    RecuperarContraseniaComponent
   ],
   imports: [
     BrowserModule,
