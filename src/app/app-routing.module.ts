@@ -23,7 +23,7 @@ const routes: Routes = [
   {path: 'registro-exitoso', component: RegistroExitosoComponent},
   {path: 'recuperar-contrasenia', component: RecuperarContraseniaComponent},
   {path: 'ordenes-pendientes', component: OrdenesPendientesComponent},
-  {path: '', component: CarritoComponent},
+  {path: 'carrito', component: CarritoComponent},
   {path: 'confirmar-compra', component: ConfirmarCompraComponent},
   {path: 'compra-exitosa', component: CompraExitosaComponent},
 ];

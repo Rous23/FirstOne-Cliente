@@ -1,1 +1,37 @@
-<p>confirmar-compra works!</p>
+<main id="main-confirmar">
+    <app-barra-retroceso></app-barra-retroceso>
+    <div id="titulo-pago">
+        <p id="titulo-confirmar">Confirmar compra</p>
+        <div id="informacion-pago">
+            <div id="formulario-confirmacion">
+                <app-formulario-compra></app-formulario-compra>
+            </div>
+            <div id="detalle">
+                <p id="texto-detalle">Detalle</p>
+                <div id="cantidades-detalle">
+                    <div>
+                        <p>Subtotal</p>
+                        <p>Impuesto</p>
+                        <p>Delivery</p>
+                        <b><p>Total</p></b>
+                    </div>
+                    <div>
+                        <p>$500.00</p>
+                        <p>$120.00</p>
+                        <p>$25.00</p>
+                        <b><p>$655.00</p></b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-bottom" id="total-pago">
+        <div id="total">
+            <p id="pagar">Total a pagar</p>
+            <p id="pagar-cantidad">$655.00</p>
+        </div>
+        <div id="siguiente">
+            <button class="btn btn-primary" id="btn-siguiente">Siguiente</button>
+        </div>
+    </div>
+</main>

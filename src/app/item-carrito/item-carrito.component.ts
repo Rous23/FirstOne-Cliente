@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faMinus, faPlus, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-item-carrito',
@@ -8,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class ItemCarritoComponent implements OnInit {
 
   constructor() { }
+
+  faTimes = faTimes
+  faMinus = faMinus
+  faPlus = faPlus
 
   ngOnInit(): void {
   }
