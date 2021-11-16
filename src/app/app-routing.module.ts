@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { InformativoComponent } from './informativo/informativo.component';
 import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.component';
+import { OrdenesPendientesComponent } from './ordenes-pendientes/ordenes-pendientes.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { RecuperarContraseniaComponent } from './recuperar-contrasenia/recuperar-contrasenia.component';
 import { RegistroExitosoComponent } from './registro-exitoso/registro-exitoso.component';
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'verificacion-registro', component: VerificacionRegistroComponent},
   {path: 'registro-exitoso', component: RegistroExitosoComponent},
-  {path: 'recuperar-contrasenia', component: RecuperarContraseniaComponent}
+  {path: 'recuperar-contrasenia', component: RecuperarContraseniaComponent},
+  {path: 'ordenes-pendientes', component: OrdenesPendientesComponent},
 ];
 
 @NgModule({

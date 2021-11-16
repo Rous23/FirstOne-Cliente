@@ -21,6 +21,7 @@ import { HistorialOrdenesComponent } from './historial-ordenes/historial-ordenes
 import { VerificacionRegistroComponent } from './verificacion-registro/verificacion-registro.component';
 import { RegistroExitosoComponent } from './registro-exitoso/registro-exitoso.component';
 import { RecuperarContraseniaComponent } from './recuperar-contrasenia/recuperar-contrasenia.component';
+import { OrdenesPendientesComponent } from './ordenes-pendientes/ordenes-pendientes.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { RecuperarContraseniaComponent } from './recuperar-contrasenia/recuperar
     HistorialOrdenesComponent,
     VerificacionRegistroComponent,
     RegistroExitosoComponent,
-    RecuperarContraseniaComponent
+    RecuperarContraseniaComponent,
+    OrdenesPendientesComponent
   ],
   imports: [
     BrowserModule,
