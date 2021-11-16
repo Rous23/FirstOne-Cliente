@@ -1,1 +1,748 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
+
+main {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    font-family:  'Open Sans Condensed','Comic Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 576px) {
+    #imagen-informativa, #imagen-registro-exitoso-cliente{
+        width: 100%;
+    }
+}
+
+.navbar{
+    padding-left: 7px;
+    height: 50px!important;
+}
+
+
+.bg-light{
+    background-color: white !important;
+}
+
+.btn-primary{
+    background-color:#8A80FD;
+    border-color: #8A80FD;
+    border-radius: 12px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size:.90rem;
+}
+
+.btn-primary:active, .btn-primary:hover, .btn-primary:focus{
+    background-color:#8A80FD;
+    border-color: #8A80FD;
+    box-shadow:none;
+}
+
+#texto-principal{
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#texto-registro-exitoso{
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#formulario-iniciar-sesion{
+    margin-top: 35px;
+}
+
+#label-correo, #label-contrasenia, #label-nombre, #label-fecha-nacimiento, #label-repetir-contrasenia, #label-nombre-titular, #label-numero-tarjeta, #label-fecha-vencimiento, #label-cvv, #label-latitud, #label-longitud{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+#input-correo, #input-contrasenia, #input-repetir-contrasenia, #input-fecha-nacimiento, #input-nombre, #input-nombre-titular, #input-numero-tarjeta, #input-fecha-vencimiento, #input-cvv, #input-latitud, #input-longitud{
+    margin: auto;
+    width: 300px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    border-color: rgba(254, 185, 73, 0.5);
+    border-width: 2px;
+    width: 100%;
+}
+
+#input-correo::placeholder, #input-contrasenia::placeholder,   #input-repetir-contrasenia::placeholder, #input-nombre::placeholder, #input-fecha-nacimiento{
+    color: #c0c0c0;
+}
+
+#main-iniciar-sesion, #main-registrarse, #main-recuperar-contrasenia, #main-registro-exitoso-cliente, #main-verificacion{
+    padding: 30px 50px!important;
+}
+
+#recuperar-contrasenia{
+    color: #FEB949;
+    font-weight: 600;
+    margin-top: 35px;
+}
+
+#boton-iniciar-sesion, #boton-registrarse, #boton-recuperacion, #cerrar-formulario, #actualizar-info, #actualizar-contraseña, #actualizar-tarjeta, #actualizar-direccion {
+    margin-top: 35px;
+    width: 140px;
+}
+
+#crear-cuenta, #iniciar-cuenta, #enviar-correo{
+    color: #FEB949;
+    font-weight: bold;
+}
+
+#crear-cuenta-texto, #texto-iniciar, #texto-ayuda{
+    font-weight: 500;
+    margin-top: 35px;
+}
+
+#otras-opciones-de-inicio{
+    margin-top: 50px;
+}
+
+.btn-outline-info{
+    border-color: #c0c0c0;
+    color: black;
+    border-radius: 25px;
+    font-weight: bold;
+    width: 130px;
+}
+
+#texto-recuperacion{
+    color: #c0c0c0;
+    text-align: start;
+    margin: 18px 0px;
+    font-size: 15px;
+}
+
+.codigo{
+    width: 50px;
+    height: 50px;
+    border-color: rgba(254, 185, 73, 0.5);
+    border-width: 2px;
+    border-radius: 8px;
+    margin: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#texto-secundario, #verificacion-texto{
+    font-weight: 500;
+    margin-top: 35px;
+}
+
+#enviar-de-nuevo{
+    color: #FEB949;
+}
+
+#btn-continuar-registro-exitoso{
+    width: 200px;
+}
+
+.fa-search{
+    font-size: 14px;
+    padding: 5px;
+}
+
+.fa-user-cog{
+    font-size: 20px;
+    padding: 5px;
+}
+
+#logo-ajustes, #barra-perfil{
+    display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+#imagen-logo{
+    width: 120px;
+}
+
+#header{
+    background-color: rgba(202, 201, 242, 0.4);
+    height: 320px;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    padding: 10px 20px;
+}
+
+#baner-descuento, #baner-perfil{
+    display: flex;
+    flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#busqueda{
+    padding: 25px;
+}
+
+#bienvenida{
+    margin-top: 20px;
+}
+
+#saludo{
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+#pregunta{
+    font-weight: bold;
+    font-size: 22px;
+}
+
+body{
+    font-family:  'Open Sans Condensed', 'Comic Neue', sans-serif;
+    height: 100vh;
+}
+
+#baner-descuento, #baner-perfil{
+    background-color: white;
+    border: 1 solid #c0c0c0;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px rgb(223, 222, 222);
+    padding-left: 15px;
+    position: relative;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#imagen-regalo{
+    width: 150px
+}
+
+#porcentaje-banner{
+    margin-bottom: 0px!important;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#pedidos-banner{
+    margin-bottom: 0px!important;
+    font-size: 11px;
+}
+
+#texto-banner{
+    background-color: rgba(254, 185, 73, 0.8);
+    border-radius: 16px;
+    width: 155px;
+    height: 40px;
+    padding-left: 20px;
+}
+
+#input-busqueda{
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    background-color: #e9ecef;
+    border: 0px;
+}
+
+#icono-busqueda{
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    border: 0px;
+    color: rgba(108, 99, 255, 0.7);
+    font-size: 8px!important;
+    cursor: pointer;
+}
+
+#grupo-busqueda{
+    border-radius: 15px;
+    box-shadow: 0px 5px 10px rgb(175, 175, 175);
+}
+
+#botones-navegacion{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding-bottom: 20px;
+    height: 70px;
+    border: 2px solid rgb(236, 236, 236);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: white;
+    border-bottom: 0px;
+}
+
+.iconos{
+    font-size: 25px;
+    color: gray;
+}
+
+#activo{
+    color: rgba(108, 99, 255, 0.7);
+}
+
+.img-card{
+    width: 100px;
+}
+
+#cartas-categorias{
+    display: flex;
+    flex-direction: row;
+}
+
+#card-item{
+    display: flex;
+    flex-direction: column;
+    width: 140px!important;
+}
+
+.btn-item-categoria{
+    border-radius: 100%!important;
+    border: none;
+    box-shadow: 0px 3px 10px rgb(182, 180, 180);
+}
+
+#cartas-empresas, #empresas-favs{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.item-empresa{
+    flex: none;
+    width: calc((100% - 10px)/2);
+    display: flex;
+    cursor: pointer;
+}
+
+#empresas-top{
+    margin-bottom: 1.5rem;
+}
+
+#header-perfil{
+    background-color: rgba(202, 201, 242, 0.4);
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    padding: 10px 20px;
+    height: 240px!important;
+}
+
+#informacion-perfil{
+    margin: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#baner-perfil{
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+    padding-left: 0px;
+    font-size: 12px;
+}
+
+.estilo-btn-perfil{
+    border: 1px solid grey;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    color: grey;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.active{
+    border: 1px solid #FEB949;
+    color: #FEB949;
+}
+
+.contenedor-btn-perfil{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#contenedor-principal-perfil, #card-historial-ordenes{
+    background-color: white;
+    border: 1 solid #c0c0c0;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px rgb(223, 222, 222);
+    width: 100%;
+}
+
+.items-perfil{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: center;
+    padding: 5px 20px;
+}
+
+#card-historial-ordenes{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: center;
+    padding: 5px 20px;
+}
+
+.contenido-card-orden, .precio-card-orden{
+    padding: 7px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+	align-items: flex-start;
+    font-size: 14px;
+}
+
+.precio-card-orden{
+    align-items: center;
+}
+
+.form-modal{
+    margin-top: 35px;
+    padding: 0px 25px;
+}
+
+#titulo-carrito, #titulo-confirmar{
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: rgba(108, 99, 255, 0.7);
+}
+
+#titulo-productos, #titulo-pago{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: 80vh;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+
+#productos-carrito{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 20px;
+    max-height: 580px;
+    overflow-y: scroll;
+}
+
+#item-producto{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+    height: 100px;
+    background-color: white;
+    box-shadow: 0px 3px 5px rgb(175, 175, 175);
+    border-radius: 20px;
+}
+
+#item-botones{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#borrar{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#item-borrar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(218, 214, 214);
+    color: rgb(156, 153, 153);
+    border: none;
+    box-shadow: 0px 3px 5px rgb(175, 175, 175);
+    width: 20px;
+    height: 20px;
+    border-radius: 15px;
+}
+
+#item-cantidad{
+    border: 1px solid rgba(175, 175, 175, 0.3);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+#cant{
+    width: 25px;
+    height: 25px;
+    border: none;
+    text-align: center;
+    color: #8A80FD;
+    margin: 0 3px;
+}
+
+.cambiar-cantidad{
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    border: none;
+    background-color: white;
+    box-shadow: 1px 1px 3px rgb(175, 175, 175);;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icono{
+    font-size: 10px;
+}
+
+#item-img{
+    display: flex;
+}
+
+#item-textos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#item-nombre{
+    font-weight: bold;
+}
+
+#item-precio{
+    font-weight: bold;
+    color: #FEB949;
+}
+
+#total-carrito, #total-pago{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 5px 40px;
+    height: 21vh;
+}
+
+#total{
+    display: flex;
+    flex-direction: column;
+}
+
+#btn-siguiente{
+    width: 150px;
+}
+
+#main-carrito, #main-confirmar{
+    background-color: rgba(254, 185, 73, 0.2);
+    height: 100vh;
+    display: flex;
+    padding: 0px;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+#main-categoria-empresa{
+    display: flex;
+    padding: 0px;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+#navbar{
+    padding-left: 15px;
+    background-color: white;
+}
+
+#siguiente{
+    margin-bottom: 30px;
+}
+
+#pagar{
+    margin-bottom: 0px;
+}
+
+#pagar-cantidad{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#informacion-pago{
+    padding: 10px 50px;
+    max-height: 580px;
+}
+
+#texto-metodo, #texto-direccion, #texto-detalle{
+    font-size: 1.3rem;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 20px;
+}
+
+.item-metodo{
+    border: 1px solid rgba(254, 185, 73, 0.5);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#texto-efectivo, #texto-tarjeta{
+    color: gray;
+}
+
+#efectivo, #tarjetaCredito{
+    border: 1px solid rgba(254, 185, 73, 0.5);
+}
+
+.form-check-input:checked{
+    background-color: rgba(254, 185, 73, 0.5);
+}
+
+#btn-agregar-direccion{
+    border: none;
+    background-color: white;
+    color: rgba(254, 185, 73, 1);
+}
+
+.form-select{
+    color: gray;
+    border: 1px solid rgba(254, 185, 73, 0.5);
+    background-image: url(/assets/img/arrow-down.svg);
+}
+
+#cantidades-detalle{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#favorito{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: red;
+}
+
+
+#header-perfil-empresa{
+    background-color: rgba(202, 201, 242, 0.4);
+    background-image: url(/assets/img/Logotipo.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    height: 150px!important;
+}
+
+#barra-perfil-empresa{
+    display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+#datos-empresa{
+    display: flex;
+    flex-direction: row;
+}
+
+#informacion-perfil-empresa{
+    margin-top: 5.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 0px 50px;
+    justify-content: center;
+}
+
+#estrellas-perfil-empresa{
+    display: flex;
+    justify-content: center;
+}
+
+#contenedor-perfil-empresa{
+    padding-top: 1rem;
+}
+
+#cards-productos{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.item-producto-empresa{
+    display: flex;
+    flex: none;
+    width: calc((100% - 10px)/3);;
+    cursor: pointer;
+}
+
+.item-producto-empresa:hover{
+    background-color: rgba(254, 185, 73, .50);
+}
+
+#atras-icon{
+    background-color: white;
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+    color: #8A80FD;
+    font-size:.85rem; 
+    margin-left: 10px;
+    box-shadow: 0px 3px 10px rgb(199, 198, 198);;
+}
+
+.iconos:hover{
+    color: #8A80FD;
+    cursor: pointer;
+}
+
+.fa-user-cog, .fa-search{
+    font-size: 30px;
+}

@@ -1,0 +1,44 @@
+<div id="header-perfil">
+    <div id="barra-perfil" class="py-2">
+        <div id="flecha-atras">
+            <fa-icon [icon] = "faArrowLeft" style="color: #8A80FD;font-size:.85rem; margin-left: 10px;"></fa-icon>
+        </div>
+        <div id="search"><fa-icon [icon] = "faSearch"></fa-icon></div>
+    </div>
+    <div id="informacion-perfil">
+        <div id="imagen-perfil" style="width: 75px;">
+            <img src="../../assets/img/One_User_Orange.png" alt="" style="width: 100%;">
+        </div>
+        <div id="datos-perfil" class="py-2 pt-2 px-4" style="flex:2">
+            <h4 style="font-weight: bold;margin-bottom: 0rem;">Juana Perez</h4>
+            <span>ejemplo@gmail.com</span>
+        </div>
+    </div>
+    <div id="baner-perfil">
+        <div class="contenedor-btn-perfil">
+            <div id="info" class="estilo-btn-perfil active" >
+                <fa-icon [icon] = "faAddressBook"></fa-icon>
+            </div>
+            <span>Información de Perfil</span>
+        </div>
+        <div class="contenedor-btn-perfil">
+            <div id="empresas-btn-favs" class="estilo-btn-perfil">
+                <fa-icon [icon] = "faStore"></fa-icon>
+            </div>
+            <span>Empresas Favoritas</span>
+        </div>
+        <div class="contenedor-btn-perfil">
+            <div id="o-recibidas" class="estilo-btn-perfil">
+                <fa-icon [icon] = "faClipboardCheck"></fa-icon>
+            </div>
+            <span>Historial de ordenes</span>
+        </div>
+    </div>
+</div>
+
+<main id="main-perfil">
+    <app-informacion-perfil></app-informacion-perfil>
+    <app-empresas-favoritas></app-empresas-favoritas>
+    <app-historial-ordenes></app-historial-ordenes>
+</main>
+<app-footer></app-footer>

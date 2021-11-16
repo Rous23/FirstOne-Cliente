@@ -1,0 +1,42 @@
+<app-barra-retroceso></app-barra-retroceso>
+<main id="main-registrarse" class="container">
+    <div id="logo">
+        <img src="../../assets/img/Logotipo.svg" alt="Logo">
+    </div>
+    <div id="texto-principal" class="mb-3">Registrarse</div>
+    <div id="formulario-registrarse">
+        <form>
+            <div class="form-group">
+                <label id="label-nombre" for="input-nombre">Nombre Completo</label>
+                <input id="input-nombre" type="text" class="form-control" placeholder="Nombre Completo">
+            </div>
+            <div class="form-group">
+                <label id="label-fecha-nacimiento" for="input-fecha-nacimiento">Fecha Nacimiento</label>
+                <input id="input-fecha-nacimiento" type="date" class="form-control" placeholder="Nombre Completo">
+            </div>
+            <div class="form-group">
+                <label id="label-correo" for="input-correo">Correo electrónico</label>
+                <input id="input-correo" type="email" class="form-control" placeholder="ejemplo@gmail.com">
+            </div>
+            <div class="form-group">
+                <label id="label-contrasenia" for="input-contrasenia">Contraseña</label>
+                <input id="input-contrasenia" type="password" class="form-control" placeholder="contraseña">
+            </div>
+            <div class="form-group">
+                <label id="label-repetir-contrasenia" for="input-repetir-contrasenia">Contraseña</label>
+                <input id="input-repetir-contrasenia" type="password" class="form-control" placeholder="contraseña">
+            </div>
+            <div>
+                <button id="boton-registrarse" type="button" class="btn btn-primary" href="#">Registrarse</button>
+            </div>
+            <div id="texto-iniciar">
+                <h6>¿Ya tienes cuenta? </h6>
+                <h6 id="iniciar-cuenta">Inicia sesión aquí</h6>
+            </div>
+        </form>
+    </div>
+    <div id="otras-opciones-de-inicio">
+        <button class="btn btn-outline-info"><fa-icon [icon]="faGoogle"></fa-icon> Google</button>
+        <button class="btn btn-outline-info"><fa-icon [icon]="faFacebookF"></fa-icon> Facebook</button>
+    </div>
+</main>

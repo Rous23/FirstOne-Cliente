@@ -1,0 +1,34 @@
+<div id="header">
+    <div id="logo-ajustes">
+        <div id="logo">
+            <img id="imagen-logo" src="../../../assets/img/Logotipo.svg" alt="Logo">
+        </div>
+        <div id="configuracion"><fa-icon [icon] = "faUserCog"></fa-icon></div>
+    </div>
+    <div id="bienvenida">
+        <p id="saludo">¡Hola Juana!</p>
+        <p id="pregunta">¿Qué necesitas pedir hoy?</p>
+    </div>
+    <div id="busqueda">
+        <form>
+            <div id="grupo-busqueda" class="input-group">
+                <input id="input-busqueda" type="text" class="form-control" placeholder="Buscar">
+                <div class="input-group-prepend">
+                    <div id="icono-busqueda" class="input-group-text"><fa-icon [icon] = "faSearch"></fa-icon></div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="baner-descuento">
+        <div id="texto-banner">
+            <p id="porcentaje-banner">35% de descuento</p>
+            <p id="pedidos-banner">En tus primeros 10 pedidos</p>
+        </div>
+        <img id="imagen-regalo" src="../../assets/img/Gift.png" alt="regalo">
+    </div>
+</div>
+<main id="contenido-principal">
+    <app-categorias></app-categorias>
+    <app-empresas></app-empresas>
+</main>
+<app-footer></app-footer>

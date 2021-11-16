@@ -1,0 +1,10 @@
+.navbar{
+    height: 40px;
+}
+.bg-light{
+    background-color: white !important;
+}
+#navbar{
+    padding-left: 15px;
+    background-color: white;
+}

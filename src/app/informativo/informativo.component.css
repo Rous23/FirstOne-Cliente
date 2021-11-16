@@ -1,0 +1,29 @@
+main {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    font-family:  'Open Sans Condensed','Comic Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 576px) {
+    #imagen-informativa{
+        width: 100%;
+    }
+}
+
+.btn-primary{
+    background-color:#8A80FD;
+    border-color: #8A80FD;
+    border-radius: 12px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size:.90rem;
+}
+
+.btn-primary:active, .btn-primary:hover, .btn-primary:focus{
+    background-color:#8A80FD;
+    border-color: #8A80FD;
+    box-shadow:none;
+}
