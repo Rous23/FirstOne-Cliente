@@ -22,6 +22,9 @@ import { VerificacionRegistroComponent } from './verificacion-registro/verificac
 import { RegistroExitosoComponent } from './registro-exitoso/registro-exitoso.component';
 import { RecuperarContraseniaComponent } from './recuperar-contrasenia/recuperar-contrasenia.component';
 import { OrdenesPendientesComponent } from './ordenes-pendientes/ordenes-pendientes.component';
+import { CarritoComponent } from './carrito/carrito.component';
+import { CompraExitosaComponent } from './compra-exitosa/compra-exitosa.component';
+import { ConfirmarCompraComponent } from './confirmar-compra/confirmar-compra.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,10 @@ import { OrdenesPendientesComponent } from './ordenes-pendientes/ordenes-pendien
     VerificacionRegistroComponent,
     RegistroExitosoComponent,
     RecuperarContraseniaComponent,
-    OrdenesPendientesComponent
+    OrdenesPendientesComponent,
+    CarritoComponent,
+    CompraExitosaComponent,
+    ConfirmarCompraComponent
   ],
   imports: [
     BrowserModule,
