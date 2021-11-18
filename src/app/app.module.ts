@@ -30,6 +30,7 @@ import { EmpresasCategoriaComponent } from './empresas-categoria/empresas-catego
 import { EmpresaProductosComponent } from './empresa-productos/empresa-productos.component';
 import { ProductosComponent } from './productos/productos.component';
 import { ItemEmpresaHomeComponent } from './item-empresa-home/item-empresa-home.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { ItemEmpresaHomeComponent } from './item-empresa-home/item-empresa-home.
     EmpresasCategoriaComponent,
     EmpresaProductosComponent,
     ProductosComponent,
-    ItemEmpresaHomeComponent
+    ItemEmpresaHomeComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,

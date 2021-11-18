@@ -758,3 +758,17 @@ body{
 .fa-user-cog, .fa-search{
     font-size: 30px;
 }
+
+.header-landing{
+    background-image: url(assets/img/Rectangle.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    align-content: center;
+    text-align: center;
+    width: 100%;
+}

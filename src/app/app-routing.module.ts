@@ -8,6 +8,7 @@ import { EmpresasCategoriaComponent } from './empresas-categoria/empresas-catego
 import { HomeComponent } from './home/home.component';
 import { InformativoComponent } from './informativo/informativo.component';
 import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 import { OrdenesPendientesComponent } from './ordenes-pendientes/ordenes-pendientes.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { RecuperarContraseniaComponent } from './recuperar-contrasenia/recuperar-contrasenia.component';
@@ -16,7 +17,8 @@ import { RegistroComponent } from './registro/registro.component';
 import { VerificacionRegistroComponent } from './verificacion-registro/verificacion-registro.component';
 
 const routes: Routes = [
-  {path: '', component: InformativoComponent},
+  {path: '', component: LandingPageComponent},
+  {path: 'informativo', component: InformativoComponent},
   {path: 'iniciar-sesion', component: IniciarSesionComponent},
   {path: 'registro', component: RegistroComponent},
   {path: 'perfil', component: PerfilComponent},
