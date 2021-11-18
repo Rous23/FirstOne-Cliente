@@ -772,3 +772,65 @@ body{
     text-align: center;
     width: 100%;
 }
+
+.caracs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    padding: 30px 0px;
+}
+
+.carac{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 200px;
+    margin: 20px 0px;
+}
+
+.img-carac{
+    background-image: url(assets/img/Ellipse.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    height: 90px;
+    width: 90px;
+}
+
+.icon-carac{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.titulo-carac, .descripcion-carac{
+    text-align: center;
+}
+
+.banner-moto{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(242, 242, 242, 0.5);
+    margin: 20px 0px;
+    padding: 15px 0px;
+    padding-left: 25px;
+    width: 100vw;
+    height: 300px;
+    justify-content: space-between;
+}
+
+.moto-titulo{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.moto-texto{
+    font-size: 18px;
+}
