@@ -4,7 +4,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BarraRetrocesoComponent } from './barra-retroceso/barra-retroceso.component';
 import { InformativoComponent } from './informativo/informativo.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -64,7 +64,8 @@ import { ItemEmpresaHomeComponent } from './item-empresa-home/item-empresa-home.
     AppRoutingModule,
     FormsModule,
     FontAwesomeModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

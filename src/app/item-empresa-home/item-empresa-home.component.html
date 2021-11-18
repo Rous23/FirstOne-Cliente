@@ -1,10 +1,10 @@
 <div id="empresas-top">
     <h3>Empresas top</h3>
     <div id="cartas-empresas">
-        <div class="item-empresa card mb-2">
+        <div class="item-empresa card mb-2" *ngFor="let item of empresas" [routerLink]="['/empresa-productos', item.id]" routerLinkActive="router-link-active" >
             <div class="card-body">
                 <img src="../../assets/img/img.svg" class="card-img-top" alt="...">
-                <div style="font-weight: bold;">Nombre</div>
+                <div style="font-weight: bold;">{{item.nombre}}</div>
                 <!-- <div class="estrellas">
                     <fa-icon [icon] = "faStar"></fa-icon>
                 </div> -->

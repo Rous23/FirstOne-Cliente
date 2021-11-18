@@ -14,9 +14,23 @@ export class PerfilComponent implements OnInit {
   faAddressBook = faAddressBook
   faStore = faStore
   faClipboardCheck = faClipboardCheck
-  categoria = false
-  empresas = true
+  verRegion = 'informacionPersonal'
   ngOnInit(): void {
   }
 
+  verInformacion(){
+    if(this.verRegion != 'informacionPersonal'){
+      this.verRegion = 'informacionPersonal'
+    }
+  }
+  verEmpresasFavs(){
+    if(this.verRegion != 'empresasFavoritas'){
+      this.verRegion = 'empresasFavoritas'
+    }
+  }
+  verHistorial(){
+    if(this.verRegion != 'historialOrdenes'){
+      this.verRegion = 'historialOrdenes'
+    }
+  }
 }

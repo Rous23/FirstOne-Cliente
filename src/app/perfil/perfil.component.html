@@ -16,19 +16,19 @@
     </div>
     <div id="baner-perfil">
         <div class="contenedor-btn-perfil">
-            <div id="info" class="estilo-btn-perfil active" >
+            <div id="info" class="estilo-btn-perfil" [ngClass]="{active: verRegion=='informacionPersonal'}" (click)="verInformacion()">
                 <fa-icon [icon] = "faAddressBook"></fa-icon>
             </div>
             <span>Información de Perfil</span>
         </div>
         <div class="contenedor-btn-perfil">
-            <div id="empresas-btn-favs" class="estilo-btn-perfil">
+            <div id="empresas-btn-favs" class="estilo-btn-perfil" [ngClass]="{active: verRegion=='empresasFavoritas'}" (click)="verEmpresasFavs()">
                 <fa-icon [icon] = "faStore"></fa-icon>
             </div>
             <span>Empresas Favoritas</span>
         </div>
         <div class="contenedor-btn-perfil">
-            <div id="o-recibidas" class="estilo-btn-perfil">
+            <div id="o-recibidas" class="estilo-btn-perfil" [ngClass]="{active: verRegion=='historialOrdenes'}" (click)="verHistorial()">
                 <fa-icon [icon] = "faClipboardCheck"></fa-icon>
             </div>
             <span>Historial de ordenes</span>
@@ -37,8 +37,8 @@
 </div>
 
 <main id="main-perfil">
-    <app-informacion-perfil></app-informacion-perfil>
-    <app-empresas-favoritas></app-empresas-favoritas>
-    <app-historial-ordenes></app-historial-ordenes>
+    <app-informacion-perfil *ngIf="verRegion == 'informacionPersonal'"></app-informacion-perfil>
+    <app-empresas-favoritas *ngIf="verRegion == 'empresasFavoritas'"></app-empresas-favoritas>
+    <app-historial-ordenes *ngIf="verRegion == 'historialOrdenes'"></app-historial-ordenes>
 </main>
 <app-footer></app-footer>

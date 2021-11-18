@@ -3,19 +3,19 @@
     <div id="titulo-productos">
         <p id="titulo-carrito">Categoria: Restaurantes</p>
         <div id="productos-carrito">
-            <div id="item-producto" class="carrito my-2">
+            <div id="item-producto" class="carrito my-2" *ngFor="let empresa of empresas" [routerLink]="['/empresa-productos', empresa.id]" routerLinkActive="router-link-active" >
                 <div id="item-img" class="item">
                     <img src="../../assets/img/img.svg">
                 </div>
                 <div id="item-textos">
                     <div id="item-nombre">
-                        Lorem, ipsum.
+                        {{empresa.nombre}}
                     </div>
                     <div id="item-descripcion">
-                        Lorem, ipsum dolor
+                        {{empresa.descripcion}}
                     </div>
                     <div id="item-precio">
-                        <fa-icon [icon] = faStar></fa-icon> 4.5
+                        <fa-icon [icon] = faStar></fa-icon> {{empresa.calificacion}}
                     </div>
                 </div>
                 <div id="favorito">

@@ -16,7 +16,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { VerificacionRegistroComponent } from './verificacion-registro/verificacion-registro.component';
 
 const routes: Routes = [
-  {path: 'informativo', component: InformativoComponent},
+  {path: '', component: InformativoComponent},
   {path: 'iniciar-sesion', component: IniciarSesionComponent},
   {path: 'registro', component: RegistroComponent},
   {path: 'perfil', component: PerfilComponent},
@@ -24,12 +24,12 @@ const routes: Routes = [
   {path: 'verificacion-registro', component: VerificacionRegistroComponent},
   {path: 'registro-exitoso', component: RegistroExitosoComponent},
   {path: 'recuperar-contrasenia', component: RecuperarContraseniaComponent},
-  {path: '', component: OrdenesPendientesComponent},
+  {path: 'ordenes-pendientes', component: OrdenesPendientesComponent},
   {path: 'carrito', component: CarritoComponent},
   {path: 'confirmar-compra', component: ConfirmarCompraComponent},
   {path: 'compra-exitosa', component: CompraExitosaComponent},
-  {path: 'empresas-categoria', component: EmpresasCategoriaComponent},
-  {path: 'empresa-productos', component: EmpresaProductosComponent},
+  {path: 'empresas-categoria/:id', component: EmpresasCategoriaComponent},
+  {path: 'empresa-productos/:id', component: EmpresaProductosComponent},
 ];
 
 @NgModule({

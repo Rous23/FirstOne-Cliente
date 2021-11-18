@@ -36,6 +36,11 @@ main {
     font-size:.90rem;
 }
 
+.btn-primary:disabled{
+    background-color: #8a80fdce;
+    border: #8a80fdce;
+}
+
 .btn-primary:active, .btn-primary:hover, .btn-primary:focus{
     background-color:#8A80FD;
     border-color: #8A80FD;
@@ -70,7 +75,7 @@ main {
     justify-content: center;
 }
 
-#label-correo, #label-contrasenia, #label-nombre, #label-fecha-nacimiento, #label-repetir-contrasenia, #label-nombre-titular, #label-numero-tarjeta, #label-fecha-vencimiento, #label-cvv, #label-latitud, #label-longitud{
+.labels{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -78,17 +83,17 @@ main {
     font-weight: 600;
 }
 
-#input-correo, #input-contrasenia, #input-repetir-contrasenia, #input-fecha-nacimiento, #input-nombre, #input-nombre-titular, #input-numero-tarjeta, #input-fecha-vencimiento, #input-cvv, #input-latitud, #input-longitud{
+.form-control{
     margin: auto;
     width: 300px;
     box-sizing: border-box;
-    margin-bottom: 15px;
+    margin-bottom: 1px;
     border-color: rgba(254, 185, 73, 0.5);
     border-width: 2px;
     width: 100%;
 }
 
-#input-correo::placeholder, #input-contrasenia::placeholder,   #input-repetir-contrasenia::placeholder, #input-nombre::placeholder, #input-fecha-nacimiento{
+#formulario-iniciar-sesion .form-control::placeholder, .form-control{
     color: #c0c0c0;
 }
 
@@ -295,8 +300,8 @@ body{
     color: gray;
 }
 
-#activo{
-    color: rgba(108, 99, 255, 0.7);
+.activo{
+    color: rgba(108, 99, 255, 0.7)!important;
 }
 
 .img-card{
@@ -704,6 +709,7 @@ body{
 #estrellas-perfil-empresa{
     display: flex;
     justify-content: center;
+    color: rgba(254, 185, 73, 1);
 }
 
 #contenedor-perfil-empresa{

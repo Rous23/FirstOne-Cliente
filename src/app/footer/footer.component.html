@@ -1,7 +1,17 @@
 <div id="botones-navegacion" class="fixed-bottom">
-    <fa-icon [icon] = "faHome" id="activo" class="iconos"></fa-icon>
-    <fa-icon [icon] = "faClipboardList" class="iconos"></fa-icon>
-    <fa-icon [icon] = "faUser" class="iconos"></fa-icon>
-    <fa-icon [icon] = "faHeart" class="iconos"></fa-icon>
-    <fa-icon [icon] = "faShoppingCart" class="iconos"></fa-icon>
+    <div class="iconos" [ngClass]="{activo: iconoActivo == 'home'}" (click)="verHome()">
+        <fa-icon [icon] = "faHome"></fa-icon>
+    </div>
+    <div class="iconos" [ngClass]="{activo: iconoActivo == 'ordenes'}" (click)="verOrdenes()" >
+        <fa-icon [icon] = "faClipboardList"></fa-icon>
+    </div>
+    <div class="iconos" [ngClass]="{activo: iconoActivo == 'perfil'}" (click)="verPerfil()" >
+        <fa-icon [icon] = "faUser"></fa-icon>
+    </div>
+    <div class="iconos" [ngClass]="{activo: iconoActivo == 'deseos'}" (click)="verListaDeseos()" >
+        <fa-icon [icon] = "faHeart"></fa-icon>
+    </div>
+    <div  class="iconos" [ngClass]="{activo: iconoActivo == 'carrito'}" (click)="verCarrito()" >
+        <fa-icon [icon] = "faShoppingCart"></fa-icon>
+    </div>
 </div>

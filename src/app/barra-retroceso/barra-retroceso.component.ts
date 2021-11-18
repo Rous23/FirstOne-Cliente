@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-barra-retroceso',
@@ -8,9 +9,12 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 })
 export class BarraRetrocesoComponent implements OnInit {
   
-  constructor() { }
+  constructor(private _location:Location) { }
   faArrowLeft = faArrowLeft;
   ngOnInit(): void {
   }
 
+  _back(){
+    this._location.back();
+  }
 }
