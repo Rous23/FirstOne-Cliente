@@ -1,8 +1,10 @@
-<div class="carrito my-2" id="item-producto">
+<div class="carrito my-2">
     <div class="item" id="item-img">
         <img src="../../assets/img/img.svg">
     </div>
-    <div id="item-textos">
+    <div style="display: flex;
+    flex-direction: column;
+    justify-content: center;">
         <div id="item-nombre">
             Lorem, ipsum.
         </div>
@@ -18,9 +20,9 @@
             <div id="item-borrar"><fa-icon [icon]='faTimes'></fa-icon></div>
         </div>
         <div id="item-cantidad">
-            <button class="cambiar-cantidad"><fa-icon [icon]='faMinus'></fa-icon></button>
-            <input id="cant" type="number" min="1" max="999">
-            <button class="cambiar-cantidad"><fa-icon [icon]='faPlus'></fa-icon></button>
+            <button class="cambiar-cantidad" (click)="minus()"><fa-icon  style="color: grey;" [icon]='faMinus'></fa-icon></button>
+            <input id="cant" type="number" min="1" max="100" [(ngModel)]="count" disabled>
+            <button class="cambiar-cantidad" (click)="plus()"><fa-icon  style="color: grey;" [icon]='faPlus'></fa-icon></button>
         </div>
     </div>
 </div>

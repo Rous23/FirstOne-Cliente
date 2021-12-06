@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BarraRetrocesoComponent } from './barra-retroceso/barra-retroceso.component';
 import { InformativoComponent } from './informativo/informativo.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.component';
 import { RegistroComponent } from './registro/registro.component';
 import { HomeComponent } from './home/home.component';
@@ -31,6 +33,7 @@ import { EmpresaProductosComponent } from './empresa-productos/empresa-productos
 import { ProductosComponent } from './productos/productos.component';
 import { ItemEmpresaHomeComponent } from './item-empresa-home/item-empresa-home.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +62,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     EmpresaProductosComponent,
     ProductosComponent,
     ItemEmpresaHomeComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +71,9 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     FormsModule,
     FontAwesomeModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

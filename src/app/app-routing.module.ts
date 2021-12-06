@@ -30,8 +30,8 @@ const routes: Routes = [
   {path: 'carrito', component: CarritoComponent},
   {path: 'confirmar-compra', component: ConfirmarCompraComponent},
   {path: 'compra-exitosa', component: CompraExitosaComponent},
-  {path: 'empresas-categoria/:id', component: EmpresasCategoriaComponent},
-  {path: 'empresa-productos/:id', component: EmpresaProductosComponent},
+  {path: 'empresas-categoria/:idCategoria', component: EmpresasCategoriaComponent},
+  {path: 'empresa-productos/:idEmpresa', component: EmpresaProductosComponent},
 ];
 
 @NgModule({

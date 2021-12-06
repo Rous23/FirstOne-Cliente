@@ -12,9 +12,9 @@
     <div id="busqueda">
         <form>
             <div id="grupo-busqueda" class="input-group">
-                <input id="input-busqueda" type="text" class="form-control" placeholder="Buscar">
-                <div class="input-group-prepend">
-                    <div id="icono-busqueda" class="input-group-text"><fa-icon [icon] = "faSearch"></fa-icon></div>
+                <input id="input-busqueda" type="text" class="form-control" placeholder="Buscar" style="max-height: 50px;margin:0px;">
+                <div class="input-group-prepend" style="max-height: 38px;">
+                    <div id="icono-busqueda" class="input-group-text" style="background-color: white;"><fa-icon [icon] = "faSearch"></fa-icon></div>
                 </div>
             </div>
         </form>
@@ -28,7 +28,15 @@
     </div>
 </div>
 <main id="contenido-principal">
-    <app-categorias></app-categorias>
     <app-item-empresa-home></app-item-empresa-home>
+    <app-categorias></app-categorias>
 </main>
 <app-footer></app-footer>
+<ngx-spinner
+    bdColor="rgba(255,255,255,.9)"
+    size = "large"
+    color = "#FEB949"
+    type="ball-fussion"
+    [fullScreen] = "true"
+    >
+</ngx-spinner>

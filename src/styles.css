@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~leaflet/dist/leaflet.css";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
 
@@ -187,7 +188,7 @@ main {
 }
 
 #header{
-    background-color: rgba(202, 201, 242, 0.4);
+    background-color: rgba(202, 201, 242);
     height: 320px;
     border-bottom-left-radius: 35px;
     border-bottom-right-radius: 35px;
@@ -263,7 +264,6 @@ body{
 #input-busqueda{
     border-bottom-left-radius: 15px;
     border-top-left-radius: 15px;
-    background-color: #e9ecef;
     border: 0px;
 }
 
@@ -278,7 +278,7 @@ body{
 
 #grupo-busqueda{
     border-radius: 15px;
-    box-shadow: 0px 5px 10px rgb(175, 175, 175);
+    /*box-shadow: 0px 5px 10px rgb(175, 175, 175);*/
 }
 
 #botones-navegacion{
@@ -308,15 +308,18 @@ body{
     width: 100px;
 }
 
-#cartas-categorias{
+#cartas-empresas{
     display: flex;
     flex-direction: row;
 }
 
-#card-item{
+.item-empresa{
     display: flex;
     flex-direction: column;
     width: 140px!important;
+    color: grey;
+    width: calc((100% - 2px) / 3);
+    font-size: small;
 }
 
 .btn-item-categoria{
@@ -325,7 +328,7 @@ body{
     box-shadow: 0px 3px 10px rgb(182, 180, 180);
 }
 
-#cartas-empresas, #empresas-favs{
+#cartas-categorias, #empresas-favs{
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -333,19 +336,20 @@ body{
     justify-content: space-between;
 }
 
-.item-empresa{
+.card-item{
     flex: none;
-    width: calc((100% - 10px)/2);
+    width: calc((100% - 10px) / 2);
     display: flex;
     cursor: pointer;
+    font-size: 20px;
 }
 
-#empresas-top{
+#categorias{
     margin-bottom: 1.5rem;
 }
 
 #header-perfil{
-    background-color: rgba(202, 201, 242, 0.4);
+    background-color: rgba(202, 201, 242);
     border-bottom-left-radius: 35px;
     border-bottom-right-radius: 35px;
     padding: 10px 20px;
@@ -397,10 +401,12 @@ body{
 
 #contenedor-principal-perfil, #card-historial-ordenes{
     background-color: white;
-    border: 1 solid #c0c0c0;
+   
     border-radius: 8px;
     box-shadow: 0px 5px 10px rgb(223, 222, 222);
     width: 100%;
+    border: 1px solid rgba(128,128,128,.35);
+    margin: 15px 0;
 }
 
 .items-perfil{
@@ -444,14 +450,13 @@ body{
 #titulo-carrito, #titulo-confirmar{
     font-size: 1.7rem;
     font-weight: 700;
-    margin-top: 10px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     color: rgba(108, 99, 255, 0.7);
 }
 
-#titulo-productos, #titulo-pago{
+#contenedor-productos, #titulo-pago{
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -460,21 +465,32 @@ body{
     border-bottom-right-radius: 35px;
 }
 
-#productos-carrito{
+#productos-carrito, .empresas-categoria{
     display: flex;
     flex-direction: column;
-    padding: 5px 20px;
     max-height: 580px;
-    overflow-y: scroll;
+    overflow-y:auto;
 }
 
-#item-producto{
+#productos-carrito{
+    padding: 5px 20px;
+}
+
+.carrito{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     background-color: white;
     box-shadow: 0px 3px 5px rgb(175, 175, 175);
     border-radius: 20px;
+    border: 1px solid rgb(175, 175, 175, .6);
+}
+
+#item-producto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0px 3px 5px rgb(175, 175, 175);
 }
 
 #item-botones{
@@ -537,13 +553,29 @@ body{
 
 #item-img{
     display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
 }
 
+#card-empresa{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: white;
+    box-shadow: 0px 3px 5px rgb(175, 175, 175);
+    border-radius: 20px;
+    border: 1px solid rgb(175, 175, 175, .6);
+    
+}
+#card-empresa #item-img{
+    width: 5rem;
+}
 #item-textos{
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
+    font-size: 20px;
 }
 
 #item-nombre{
@@ -584,7 +616,8 @@ body{
 
 #main-categoria-empresa{
     display: flex;
-    padding: 0px;
+    padding: 0 20px;
+    padding-bottom: 20px;
     justify-content: flex-start;
     text-align: left;
 }
@@ -665,24 +698,27 @@ body{
     justify-content: space-around;
 }
 
-#favorito{
+.icons-card-empresa{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 20px;
-    color: red;
+}
+
+#item-favorito{
+    color: rgb(156, 153, 153);
 }
 
 
-#header-perfil-empresa{
+#perfil-empresa{
     background-color: rgba(202, 201, 242, 0.4);
     background-image: url(assets/img/Logotipo.svg);
     background-repeat: no-repeat;
     background-position: center;
     border-bottom-left-radius: 35px;
     border-bottom-right-radius: 35px;
-    height: 120px!important;
+    height: 130px!important;
 }
 
 #barra-perfil-empresa{
@@ -698,7 +734,6 @@ body{
 }
 
 #informacion-perfil-empresa{
-    margin-top: 4rem;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
@@ -717,11 +752,22 @@ body{
     padding-bottom: 80px;
 }
 
-#cards-productos{
-    display: flex;
+.cards-productos{
+    /* display: flex;
     flex-direction: column;
     width: 100%;
+    justify-content: space-between; */
+
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
     justify-content: space-between;
+}
+
+.producto-empresa{
+    display: flex;
+    cursor: pointer;
 }
 
 /* .item-producto-empresa{
@@ -833,4 +879,13 @@ body{
 
 .moto-texto{
     font-size: 18px;
+}
+
+.imagen-perfil-empresa{
+    width: 80px;
+    border: 1px solid rgb(217, 217, 217, .4);
+    border-radius: 100%;
+    background-color: white;
+    padding: 5px;
+    box-shadow: 0px 5px 10px rgb(223, 222, 222);
 }

@@ -9,12 +9,21 @@ import { faMinus, faPlus, faTimes } from '@fortawesome/free-solid-svg-icons';
 export class ItemCarritoComponent implements OnInit {
 
   constructor() { }
-
   faTimes = faTimes
   faMinus = faMinus
   faPlus = faPlus
+  count:number = 1;
 
   ngOnInit(): void {
   }
 
+  minus(){
+    if(this.count > 1){
+      this.count -= 1;
+    }
+  }
+
+  plus(){
+    this.count += 1;
+  }
 }

@@ -1,13 +1,15 @@
 <div id="categorias">
-    <h3>Categorías</h3>
+    <div style="text-align: start;font-weight: bold;">
+        <h3>Categorías</h3>
+    </div>
     <div id="cartas-categorias">
-        <div class="card mb-2 mx-2 card-item" *ngFor="let item of categorias" style="width: calc((100% - 2px) / 3);">
-            <div class="card-body" style="padding: 0.4rem;">
-                <img src="../../assets/img/img.svg" class="card-img-top">
-                <div class="my-2" style="font-weight: bold;">
+        <div class="card-item mb-3 card" *ngFor="let item of categorias" [ngStyle]="{'border-color': 'rgba(128,128,128);', 'color':'grey'}">
+            <div class="card-body" style="padding: .5rem;" (click)="detalleCategoria(item)">
+                <img [src]="item.imagen" class="card-img-top p-3">
+                <div class="my-1" style="font-weight: bold;">
                     {{item.nombreCategoria}}
                 </div>
-                <a class="btn btn-outline-secondary btn-item-categoria"  [routerLink]="['/empresas-categoria', item.id]" routerLinkActive="router-link-active" ><fa-icon [icon] = "faChevronRight"></fa-icon></a>
+                <!-- <a class="btn btn-outline-secondary btn-item-categoria"  [routerLink]="['/empresas-categoria', item.id]" routerLinkActive="router-link-active" ><fa-icon [icon] = "faChevronRight"></fa-icon></a> -->
             </div>
         </div>
     </div>

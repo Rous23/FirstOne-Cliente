@@ -6,7 +6,7 @@
                 <fa-icon [icon] = "faAddressCard"></fa-icon>
             </div>
             <div>Datos Personales</div>
-            <div style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#modalDatos">
+            <div style="cursor:pointer" (click)="modalInformacion(datosPersonales)">
                 <fa-icon [icon] = "faEdit"></fa-icon>
             </div>
         </div>
@@ -15,7 +15,7 @@
                 <fa-icon [icon] = "faCreditCard"></fa-icon>
             </div>
             <div>Mis tarjetas</div>
-            <div style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#modalTarjeta">
+            <div style="cursor:pointer" (click)="modalTarjetas(tarjetaCliente)">
                 <fa-icon [icon] = "faEdit"></fa-icon>
             </div>
         </div>
@@ -24,7 +24,7 @@
                 <fa-icon [icon] = "faMapMarketAlt"></fa-icon>
             </div>
             <div>Direcciones</div>
-            <div style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#modalDireccion">
+            <div style="cursor:pointer" (click)="modalDireccion(direccionEntrega)">
                 <fa-icon [icon] = "faEdit"></fa-icon>
             </div>
         </div>
@@ -34,12 +34,12 @@
                 <fa-icon [icon] = "faKey"></fa-icon>
             </div>
             <div>Cambiar Contraseña</div>
-            <div style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#modalContrasenia">
+            <div style="cursor:pointer" (click)="modalContrasena(cambioContrasena)">
                 <fa-icon [icon] = "faEdit"></fa-icon>
             </div>
         </div>
         <h5 style="text-align: left;font-weight: bold;" class="pb-3 pt-4">Otras Acciones</h5>
-        <div id="cerrar-sesion" class="items-perfil" style="justify-content: space-around;">
+        <div id="cerrar-sesion" class="items-perfil" style="justify-content: space-around;" (click)="cerrarSesion()">
             <div>
                 <fa-icon [icon] = "faSingOutAlt"></fa-icon>
             </div>
@@ -49,139 +49,130 @@
 </div>
 
 <!-- Modal1 -->
-<div class="modal fade" id="modalContrasenia" tabindex="-1" aria-labelledby="modalContraseniaLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalContraseniaLabel">Cambiar contraseña</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div id="formulario-actualizar-contrasenia" class="form-modal">
-                    <form>
-                        <div class="form-group">
-                            <label id="label-contrasenia" for="input-contrasenia">Nueva Contraseña</label>
-                            <input id="input-contrasenia" type="password" class="form-control" placeholder="contraseña">
-                        </div>
-                        <div class="form-group">
-                            <label id="label-repetir-contrasenia" for="input-repetir-contrasenia">Verificar contraseña</label>
-                            <input id="input-repetir-contrasenia" type="password" class="form-control" placeholder="contraseña">
-                        </div>
-                        <div style="display: flex;
-                        justify-content: center;" class="py-3">
-                            <button id="cerrar-formulario" type="button" class="btn btn-primary mx-2" data-bs-dismiss="modal">Cerrar</button>
-                            <button id="actualizar-contraseña" type="button" class="btn btn-primary mx-2">Guardar contraseña</button>
-                        </div>
-                    </form>
+<ng-template #datosPersonales let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Datos Personales</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div id="formulario-actualizar-datos" class="form-modal">
+            <form>
+                <div class="form-group">
+                    <label id="label-nombre" for="input-nombre">Nombre Completo</label>
+                    <input id="input-nombre" type="text" class="form-control" placeholder="Nombre Completo">
                 </div>
-            </div>
+                <div class="form-group">
+                    <label id="label-fecha-nacimiento" for="input-fecha-nacimiento">Fecha Nacimiento</label>
+                    <input id="input-fecha-nacimiento" type="date" class="form-control" placeholder="Nombre Completo">
+                </div>
+                <div class="form-group">
+                    <label id="label-correo" for="input-correo">Correo electrónico</label>
+                    <input id="input-correo" type="email" class="form-control" placeholder="ejemplo@gmail.com">
+                </div>
+                <div style="display: flex;justify-content: center;" class="py-3">
+                    <button id="cerrar-formulario" type="button" class="btn btn-primary mx-2" (click)="modal.close('cerrar modal')">Cerrar</button>
+                    <button id="actualizar-info" type="button" class="btn btn-primary mx-2" (click)="modal.close('cerrar modal')">Guardar cambios</button>
+                </div>
+            </form>
         </div>
     </div>
-</div>
+</ng-template>
 
 <!-- Modal2 -->
-<div class="modal fade" id="modalDatos" tabindex="-1" aria-labelledby="modalDatosLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalDatosLabel">Datos Personales</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div id="formulario-actualizar-datos" class="form-modal">
-                    <form>
-                        <div class="form-group">
-                            <label id="label-nombre" for="input-nombre">Nombre Completo</label>
-                            <input id="input-nombre" type="text" class="form-control" placeholder="Nombre Completo">
-                        </div>
-                        <div class="form-group">
-                            <label id="label-fecha-nacimiento" for="input-fecha-nacimiento">Fecha Nacimiento</label>
-                            <input id="input-fecha-nacimiento" type="date" class="form-control" placeholder="Nombre Completo">
-                        </div>
-                        <div class="form-group">
-                            <label id="label-correo" for="input-correo">Correo electrónico</label>
-                            <input id="input-correo" type="email" class="form-control" placeholder="ejemplo@gmail.com">
-                        </div>
-                        <div style="display: flex;
-                        justify-content: center;" class="py-3">
-                            <button id="cerrar-formulario" type="button" class="btn btn-primary mx-2" data-bs-dismiss="modal">Cerrar</button>
-                            <button id="actualizar-info" type="button" class="btn btn-primary mx-2">Guardar cambios</button>
-                        </div>
-                    </form>
+<ng-template #cambioContrasena let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Cambiar Contraseña</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div id="formulario-actualizar-contrasenia" class="form-modal">
+            <form>
+                <div class="form-group">
+                    <label id="label-contrasenia" for="input-contrasenia">Nueva Contraseña</label>
+                    <input id="input-contrasenia" type="password" class="form-control" placeholder="contraseña">
                 </div>
-            </div>
+                <div class="form-group">
+                    <label id="label-repetir-contrasenia" for="input-repetir-contrasenia">Verificar contraseña</label>
+                    <input id="input-repetir-contrasenia" type="password" class="form-control" placeholder="contraseña">
+                </div>
+                <div style="display: flex;
+                justify-content: center;" class="py-3">
+                    <button id="cerrar-formulario" type="button" class="btn btn-primary mx-2" (click)="modal.close('cerrar modal')">Cerrar</button>
+                    <button id="actualizar-contrasena" type="button" class="btn btn-primary mx-2" (click)="modal.close('cerrar modal')">Guardar contraseña</button>
+                </div>
+            </form>
         </div>
     </div>
-</div>
+</ng-template>
 
 <!-- Modal3 -->
-<div class="modal fade" id="modalTarjeta" tabindex="-1" aria-labelledby="modalTarjetaLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalTarjetaLabel">Mis tarjetas</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div id="formulario-actualizar-tarjeta" class="form-modal">
-                    <form>
-                        <div class="form-group">
-                            <label id="label-nombre-titular" for="input-nombre-titular">Nombre del Titular</label>
-                            <input id="input-nombre-titular" type="text" class="form-control" placeholder="Nombre">
-                        </div>
-                        <div class="form-group">
-                            <label id="label-numero-tarjeta" for="input-numero-tarjeta">Numero de tarjeta</label>
-                            <input id="input-numero-tarjeta" type="number" class="form-control" placeholder="4444444444444444">
-                        </div>
-                        <div class="form-group">
-                            <label id="label-fecha-vencimiento" for="input-fecha-vencimiento">Numero de tarjeta</label>
-                            <input id="input-fecha-vencimiento" type="text" class="form-control" placeholder="mm/aaaa">
-                        </div>
-                        <div class="form-group">
-                            <label id="label-cvv" for="input-cvv">Numero de tarjeta</label>
-                            <input id="input-cvv" type="number" class="form-control" placeholder="666">
-                        </div>
-                        <div style="display: flex;justify-content: center;" class="py-3">
-                            <button id="cerrar-formulario" type="button" class="btn btn-primary mx-1" data-bs-dismiss="modal">Cerrar</button>
-                            <button id="actualizar-tarjeta" type="button" class="btn btn-primary mx-1">Guardar</button>
-                        </div>
-                    </form>
+<ng-template #tarjetaCliente let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Mis Tarjetas</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div id="formulario-actualizar-tarjeta" class="form-modal">
+            <form>
+                <div class="form-group">
+                    <label id="label-nombre-titular" for="input-nombre-titular">Nombre del Titular</label>
+                    <input id="input-nombre-titular" type="text" class="form-control" placeholder="Nombre">
                 </div>
-            </div>
+                <div class="form-group">
+                    <label id="label-numero-tarjeta" for="input-numero-tarjeta">Numero de tarjeta</label>
+                    <input id="input-numero-tarjeta" type="number" class="form-control" placeholder="4444444444444444">
+                </div>
+                <div class="form-group">
+                    <label id="label-fecha-vencimiento" for="input-fecha-vencimiento">Numero de tarjeta</label>
+                    <input id="input-fecha-vencimiento" type="text" class="form-control" placeholder="mm/aaaa">
+                </div>
+                <div class="form-group">
+                    <label id="label-cvv" for="input-cvv">Numero de tarjeta</label>
+                    <input id="input-cvv" type="number" class="form-control" placeholder="666">
+                </div>
+                <div style="display: flex;justify-content: center;" class="py-3">
+                    <button id="cerrar-formulario" type="button" class="btn btn-primary mx-1" (click)="modal.close('cerrar modal')">Cerrar</button>
+                    <button id="actualizar-tarjeta" type="button" class="btn btn-primary mx-1" (click)="modal.close('cerrar modal')">Guardar</button>
+                </div>
+            </form>
         </div>
     </div>
-</div>
+</ng-template>
 
 <!-- Modal3 -->
-<div class="modal fade" id="modalDireccion" tabindex="-1" aria-labelledby="modalDireccionLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalDireccionLabel">Direccion de Entrega</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div id="formulario-actualizar-direccion" class="form-modal">
-                    <form>
-                        <div class="form-group">
-                            <label id="label-latitud" for="input-latitud">Latitud</label>
-                            <input id="input-latitud" type="number" class="form-control" placeholder="15.4">
-                        </div>
-                        <div class="form-group">
-                            <label id="label-longitud" for="input-longitud">Longitud</label>
-                            <input id="input-longitud" type="number" class="form-control" placeholder="15.4">
-                        </div>
-                        <div class="mt-3">
-                            <h6 style="font-weight: bold;">Dirección en el Mapa</h6>
-                            <img src="https://www.comunidadbaratz.com/wp-content/uploads/El-International-Council-on-Archives-ha-creado-un-mapa-digital-geolocalizando-Archivos.jpg" alt="" style="width: 100%;">
-                        </div>
-                        <div style="display: flex;justify-content: center;" class="py-3">
-                            <button id="cerrar-formulario" type="button" class="btn btn-primary mx-1" data-bs-dismiss="modal">Cerrar</button>
-                            <button id="actualizar-direccion" type="button" class="btn btn-primary mx-1">Guardar cambios</button>
-                        </div>
-                    </form>
+<ng-template #direccionEntrega let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Direccion de entrega</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div id="formulario-actualizar-direccion" class="form-modal">
+            <form>
+                <div class="form-group">
+                    <label id="label-latitud" for="input-latitud">Latitud</label>
+                    <input id="input-latitud" type="number" class="form-control" placeholder="15.4">
                 </div>
-            </div>
+                <div class="form-group">
+                    <label id="label-longitud" for="input-longitud">Longitud</label>
+                    <input id="input-longitud" type="number" class="form-control" placeholder="15.4">
+                </div>
+                <div class="mt-3">
+                    <h6 style="font-weight: bold;">Dirección en el Mapa</h6>
+                    <app-map></app-map>
+                </div>
+                <div style="display: flex;justify-content: center;" class="py-3">
+                    <button id="cerrar-formulario" type="button" class="btn btn-primary mx-1" (click)="modal.close('cerrar modal')">Cerrar</button>
+                    <button id="actualizar-direccion" type="button" class="btn btn-primary mx-1" (click)="modal.close('cerrar modal')">Guardar cambios</button>
+                </div>
+            </form>
         </div>
     </div>
-</div>
+</ng-template>

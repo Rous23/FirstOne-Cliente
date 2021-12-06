@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { faHeart, faStar } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -10,10 +11,10 @@ export class EmpresasCategoriaComponent implements OnInit {
   empresas:any = [
     {
       id:21,
-      nombre:"Empresa1",
-      logo:"url-logo",
+      nombre:"Walmart",
+      logo:"../../assets/imagenes-empresas/warmart.png",
       banner:"url-banner",
-      descripcion:"loremlks askjds ksjhnsd",
+      descripcion:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, quae?",
       calificacion:4,
       productos:[
         {
@@ -25,10 +26,10 @@ export class EmpresasCategoriaComponent implements OnInit {
     },
     {
       id:22,
-      nombre:"Empresa2",
-      logo:"url-logo",
+      nombre:"Diunsa",
+      logo:"../../assets/imagenes-empresas/diunsa.png",
       banner:"url-banner",
-      descripcion:"loremlks askjds ksjhnsd",
+      descripcion:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, quae?",
       calificacion:4,
       productos:[
         {
@@ -40,23 +41,8 @@ export class EmpresasCategoriaComponent implements OnInit {
     },
     {
       id:23,
-      nombre:"Empresa3",
-      logo:"url-logo",
-      banner:"url-banner",
-      descripcion:"loremlks askjds ksjhnsd",
-      calificacion:4,
-      productos:[
-        {
-          id:12,
-          imagen:"url-image-producto",
-          precio:120
-        }
-      ]
-    },
-    {
-      id:24,
-      nombre:"Empresa4",
-      logo:"url-logo",
+      nombre:"MacDonal's",
+      logo:"../../assets/imagenes-empresas/macdonal.png",
       banner:"url-banner",
       descripcion:"loremlks askjds ksjhnsd",
       calificacion:4,
@@ -69,10 +55,18 @@ export class EmpresasCategoriaComponent implements OnInit {
       ]
     }
   ]
-  constructor() { }
+  idCategoria:any;
+  constructor(private ruta:ActivatedRoute, private router:Router) { 
+    this.ruta.params.subscribe(params => {
+      this.idCategoria = params.idCategoria;
+    })
+  }
   faStar = faStar
   faHeart = faHeart
   ngOnInit(): void {
   }
 
+  detalleEmpresa(item){
+    this.router.navigate(['empresa-productos',item.id])
+  }
 }
