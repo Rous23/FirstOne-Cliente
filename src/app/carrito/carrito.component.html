@@ -10,7 +10,8 @@
             <app-item-carrito></app-item-carrito>
             <app-item-carrito></app-item-carrito>
         </div>
-        <div class="fixed-bottom" id="total-carrito">
+
+        <!-- <div class="fixed-bottom" id="total-carrito">
             <div id="total">
                 <p id="pagar">Total a pagar</p>
                 <p id="pagar-cantidad">$769.00</p>
@@ -18,6 +19,17 @@
             <div id="siguiente">
                 <button class="btn btn-primary" id="btn-siguiente" [routerLink]="['/confirmar-compra']" routerLinkActive="router-link-active" >Siguiente</button>
             </div>
-        </div>
+        </div> -->
     </div>
 </main>
+<section>
+    <div class="fixed-bottom total-compra pt-3" style="background-color: rgba(254, 185, 73, 0.2);">
+        <div id="total">
+            <p id="pagar">Total a pagar</p>
+            <p id="pagar-cantidad">$769.00</p>
+        </div>
+        <div id="siguiente">
+            <button class="btn btn-primary" id="btn-siguiente" [routerLink]="['/confirmar-compra']" routerLinkActive="router-link-active" >Siguiente</button>
+        </div>
+    </div>
+</section>

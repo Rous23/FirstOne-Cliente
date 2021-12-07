@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { faArrowLeft, faStar } from '@fortawesome/free-solid-svg-icons';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { faStar as farStar} from '@fortawesome/free-regular-svg-icons';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-empresa-productos',
@@ -10,6 +11,7 @@ import { faStar as farStar} from '@fortawesome/free-regular-svg-icons';
   styleUrls: ['./empresa-productos.component.css']
 })
 export class EmpresaProductosComponent implements OnInit {
+  @ViewChild('footer') footerComponent:FooterComponent;
   empresas:any = [
     {
       id:21,
@@ -64,7 +66,7 @@ export class EmpresaProductosComponent implements OnInit {
   calificacion=[];
   constructor(private _location:Location, private ruta:ActivatedRoute) {
     this.ruta.params.subscribe(params => {
-      this.idEmpresa = params.id;
+      this.idEmpresa = params.idEmpresa;
     });
   }
   faArrowLeft = faArrowLeft
@@ -83,6 +85,11 @@ export class EmpresaProductosComponent implements OnInit {
 
   back(){
     this._location.back();
+  }
+
+  agregarNotificacion(dato){
+    console.log(dato);
+    this.footerComponent.sumarCantidadCarrito(dato);
   }
 
 }

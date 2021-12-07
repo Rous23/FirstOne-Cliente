@@ -28,7 +28,7 @@
         <div style="text-align: start;">
             <h5 style=" font-weight: bold;">Productos</h5>
         </div>
-        <app-productos></app-productos>
-        <app-footer></app-footer>
+        <app-productos (OnAgregarCarrito)="agregarNotificacion($event)"></app-productos>
+        <app-footer #footer></app-footer>
     </main>
 </div>

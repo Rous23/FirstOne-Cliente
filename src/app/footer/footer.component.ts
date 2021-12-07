@@ -16,7 +16,16 @@ export class FooterComponent implements OnInit {
   faHeart = faHeart
   faShoppingCart = faShoppingCart
   iconoActivo:string;
+  notificacion:number;
+  boolean = false;
   ngOnInit(): void {
+    let productosLocalStorage:any = [];
+    if (localStorage.getItem('carritoCompras')!=null) {
+      productosLocalStorage = JSON.parse(localStorage.getItem('carritoCompras'));
+      // console.log(productosLocalStorage.length);
+      this.notificacion = productosLocalStorage.length;
+      this.boolean = true
+    }
   }
 
   verHome(){
@@ -53,6 +62,13 @@ export class FooterComponent implements OnInit {
       console.log("Entro carrito");
       this.route.navigate(['/carrito'])
     }
+  }
+
+  sumarCantidadCarrito(dato){
+    this.boolean = true;
+    this.notificacion = dato
+    console.log(this.boolean, this.notificacion);
+    
   }
 
 }

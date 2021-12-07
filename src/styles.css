@@ -460,7 +460,7 @@ body{
     display: flex;
     flex-direction: column;
     background-color: white;
-    height: 80vh;
+    height: 85vh;
     border-bottom-left-radius: 35px;
     border-bottom-right-radius: 35px;
 }
@@ -596,17 +596,28 @@ body{
     height: 21vh;
 }
 
+.total-compra{
+    display: flex;
+    flex-direction: row;
+    max-height: 15%;
+    justify-content: space-around;
+    align-items: center;
+}
+
 #total{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #btn-siguiente{
+    display: flex;
+    flex-direction: column;
     width: 150px;
 }
 
 #main-carrito, #main-confirmar{
-    background-color: rgba(254, 185, 73, 0.2);
     height: 100vh;
     display: flex;
     padding: 0px;

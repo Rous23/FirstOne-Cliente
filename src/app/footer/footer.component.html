@@ -8,10 +8,10 @@
     <div class="iconos" [ngClass]="{activo: iconoActivo == 'perfil'}" (click)="verPerfil()" >
         <fa-icon [icon] = "faUser"></fa-icon>
     </div>
-    <div class="iconos" [ngClass]="{activo: iconoActivo == 'deseos'}" (click)="verListaDeseos()" >
+    <!-- <div class="iconos" [ngClass]="{activo: iconoActivo == 'deseos'}" (click)="verListaDeseos()" >
         <fa-icon [icon] = "faHeart"></fa-icon>
-    </div>
-    <div  class="iconos" [ngClass]="{activo: iconoActivo == 'carrito'}" (click)="verCarrito()" >
-        <fa-icon [icon] = "faShoppingCart"></fa-icon>
+    </div> -->
+    <div  class="iconos" [ngClass]="{activo: iconoActivo == 'carrito', 'btn btn-secondary': boolean}" (click)="verCarrito()" >
+    <fa-icon [icon] = "faShoppingCart"></fa-icon> {{notificacion}}
     </div>
 </div>
