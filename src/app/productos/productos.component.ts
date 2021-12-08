@@ -14,7 +14,8 @@ export class ProductosComponent implements OnInit {
     id:"123",
     nombre:"Ninguno",
     descripcion:"Lorem ipsum",
-    imagen:"urlImage"
+    imagen:"urlImage",
+    precio:125
   }
   productosCarrito:any = [];
   notificacionCarrito:number = 0;
@@ -39,7 +40,8 @@ export class ProductosComponent implements OnInit {
       descripcion:this.producto.descripcion,
       imagen:this.producto.imagen,
       cantidad:1,
-      isv:"15%"
+      isv:"15%",
+      precio:125
     }
     
     if (localStorage.getItem('carritoCompras')!=null) {

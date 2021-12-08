@@ -6,7 +6,7 @@
             <div id="formulario-confirmacion">
                 <app-formulario-compra></app-formulario-compra>
             </div>
-            <div id="detalle">
+            <div id="detalle"  style="padding-bottom: 5.3rem;">
                 <p id="texto-detalle">Detalle</p>
                 <div id="cantidades-detalle">
                     <div>
@@ -25,13 +25,15 @@
             </div>
         </div>
     </div>
-    <div class="fixed-bottom" id="total-pago">
-        <div id="total">
-            <p id="pagar">Total a pagar</p>
-            <p id="pagar-cantidad">$655.00</p>
-        </div>
-        <div id="siguiente">
-            <button class="btn btn-primary" id="btn-siguiente" [routerLink]="['/compra-exitosa']" routerLinkActive="router-link-active" >Siguiente</button>
+    <div class="fixed-bottom" style="background-color: white; height: 13%;">
+        <div class="fixed-bottom total-compra pt-3" style="background-color: rgba(254, 185, 73, 0.2);">
+            <div id="total">
+                <p id="pagar">Total a pagar</p>
+                <p id="pagar-cantidad">L. total</p>
+            </div>
+            <div id="siguiente">
+                <button class="btn btn-primary" id="btn-siguiente" (click)="ordenRealizada()" [routerLink]="['/compra-exitosa']" routerLinkActive="router-link-active">Siguiente</button>
+            </div>
         </div>
     </div>
 </main>

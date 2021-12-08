@@ -23,8 +23,10 @@ export class FooterComponent implements OnInit {
     if (localStorage.getItem('carritoCompras')!=null) {
       productosLocalStorage = JSON.parse(localStorage.getItem('carritoCompras'));
       // console.log(productosLocalStorage.length);
-      this.notificacion = productosLocalStorage.length;
-      this.boolean = true
+      if(productosLocalStorage.length != 0){
+        this.notificacion = productosLocalStorage.length;
+        this.boolean = true
+      }
     }
   }
 

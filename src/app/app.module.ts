@@ -26,7 +26,6 @@ import { OrdenesPendientesComponent } from './ordenes-pendientes/ordenes-pendien
 import { CarritoComponent } from './carrito/carrito.component';
 import { CompraExitosaComponent } from './compra-exitosa/compra-exitosa.component';
 import { ConfirmarCompraComponent } from './confirmar-compra/confirmar-compra.component';
-import { ItemCarritoComponent } from './item-carrito/item-carrito.component';
 import { FormularioCompraComponent } from './formulario-compra/formulario-compra.component';
 import { EmpresasCategoriaComponent } from './empresas-categoria/empresas-categoria.component';
 import { EmpresaProductosComponent } from './empresa-productos/empresa-productos.component';
@@ -56,7 +55,6 @@ import { MapComponent } from './map/map.component';
     CarritoComponent,
     CompraExitosaComponent,
     ConfirmarCompraComponent,
-    ItemCarritoComponent,
     FormularioCompraComponent,
     EmpresasCategoriaComponent,
     EmpresaProductosComponent,

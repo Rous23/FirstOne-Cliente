@@ -3,14 +3,46 @@
     <div id="contenedor-productos" class="mt-5">
         <div id="productos-carrito">
             <p id="titulo-carrito">Carrito de compras</p>
-            <app-item-carrito></app-item-carrito>
-            <app-item-carrito></app-item-carrito>
-            <app-item-carrito></app-item-carrito>
-            <app-item-carrito></app-item-carrito>
-            <app-item-carrito></app-item-carrito>
-            <app-item-carrito></app-item-carrito>
+            <div class="carrito my-2" *ngFor="let item of productosLocalStorage">
+                <div class="item" id="item-img">
+                    <img src="../../assets/img/img.svg">
+                </div>
+                <div style="display: flex;
+                flex-direction: column;
+                justify-content: center;">
+                    <div id="item-nombre">
+                        {{item.nombre}}
+                    </div>
+                    <div id="item-descripcion">
+                        {{item.descripcion}}
+                    </div>
+                    <div id="item-precio">
+                        {{item.precio}}
+                    </div>
+                </div>
+                <div id="item-botones">
+                    <div id="borrar">
+                        <div id="item-borrar" (click)="eliminarProductoCarrito(item.id)"><fa-icon [icon]='faTimes'></fa-icon></div>
+                    </div>
+                    <div id="item-cantidad">
+                        <button class="cambiar-cantidad" (click)="minus(item.id)"><fa-icon  style="color: grey;" [icon]='faMinus'></fa-icon></button>
+                        <input id="cant" type="number" min="1" max="100" [(ngModel)]="item.cantidad" disabled>
+                        <button class="cambiar-cantidad" (click)="plus(item.id)"><fa-icon  style="color: grey;" [icon]='faPlus'></fa-icon></button>
+                    </div>
+                </div>
+            </div>
         </div>
-
+        <div class="fixed-bottom" style="background-color: white; height: 13%;">
+            <div class="fixed-bottom total-compra pt-3" style="background-color: rgba(254, 185, 73, 0.2);">
+                <div id="total">
+                    <p id="pagar">Total a pagar</p>
+                    <p id="pagar-cantidad">L. {{total}}</p>
+                </div>
+                <div id="siguiente">
+                    <button class="btn btn-primary" id="btn-siguiente" (click)="confirmarCompra()">Siguiente</button>
+                </div>
+            </div>
+        </div>
         <!-- <div class="fixed-bottom" id="total-carrito">
             <div id="total">
                 <p id="pagar">Total a pagar</p>
@@ -22,14 +54,3 @@
         </div> -->
     </div>
 </main>
-<section>
-    <div class="fixed-bottom total-compra pt-3" style="background-color: rgba(254, 185, 73, 0.2);">
-        <div id="total">
-            <p id="pagar">Total a pagar</p>
-            <p id="pagar-cantidad">$769.00</p>
-        </div>
-        <div id="siguiente">
-            <button class="btn btn-primary" id="btn-siguiente" [routerLink]="['/confirmar-compra']" routerLinkActive="router-link-active" >Siguiente</button>
-        </div>
-    </div>
-</section>
