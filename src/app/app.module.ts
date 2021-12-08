@@ -33,6 +33,7 @@ import { ProductosComponent } from './productos/productos.component';
 import { ItemEmpresaHomeComponent } from './item-empresa-home/item-empresa-home.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MapComponent } from './map/map.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { MapComponent } from './map/map.component';
     NgbModule,
     ReactiveFormsModule,
     NgxSpinnerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
