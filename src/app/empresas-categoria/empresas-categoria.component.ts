@@ -97,7 +97,7 @@ export class EmpresasCategoriaComponent implements OnInit {
       res=>{
         console.log(res.empresasFavoritas);
         let empresasFavs = res.empresasFavoritas
-        if(empresasFavs.length==0){
+        if(empresasFavs.length==undefined){
           this.clienteService.guardarEmpresaFavorita(this.cookieService.get('idClienteFirstone'),empresa).subscribe(
             res=>{
               console.log(res);
