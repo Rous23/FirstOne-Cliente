@@ -22,6 +22,9 @@
                     <span *ngIf="password.errors.minlength">La contraseña no es correcta.</span>
                 </div>
             </div>
+            <div *ngIf="error" style="color: red;">
+                <span>Correo o contraseña incorrecta</span>
+            </div>
             <div id="recuperar-contrasenia">¿Has olvidado tu contraseña?</div>
             <div>
                 <button id="boton-iniciar-sesion" type="button" class="btn btn-primary all-btn" (click)="iniciarSesion()" [disabled] = "!formInicio.valid">Iniciar Sesión</button>

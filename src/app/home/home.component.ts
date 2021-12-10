@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { faUserCog, faSearch} from '@fortawesome/free-solid-svg-icons';
+import { CookieService } from 'ngx-cookie-service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { CategoriasService } from '../services/categorias.service';
+import { ClientesService } from '../services/clientes.service';
 
 @Component({
   selector: 'app-home',
@@ -9,16 +12,26 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private spinnerService:NgxSpinnerService) { }
+  constructor(
+    private spinnerService:NgxSpinnerService,
+    private clienteService:ClientesService,
+    private cookieService:CookieService
+    ) { }
   faUserCog = faUserCog
   faSearch = faSearch
+  nombreCliente:String;
   ngOnInit(): void {
     this.spinnerService.show();
-
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinnerService.hide();
-    }, 5000);
+    this.clienteService.obtenerUsuario(this.cookieService.get('idClienteFirstone')).subscribe(
+      res=>{
+        console.log(res.nombres);
+        this.nombreCliente = res.nombres
+        this.spinnerService.hide();
+      },
+      error=>{
+        console.error(error);
+      }
+    )
   }
 }
 

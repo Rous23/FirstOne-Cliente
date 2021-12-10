@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { faCartPlus, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { CategoriasService } from '../services/categorias.service';
 
 @Component({
   selector: 'app-productos',
@@ -10,16 +12,20 @@ export class ProductosComponent implements OnInit {
   @Output() OnAgregarCarrito = new EventEmitter();
   faShoppingCart = faShoppingCart
   faCartPlus= faCartPlus
-  producto:any = {
-    id:"123",
-    nombre:"Ninguno",
-    descripcion:"Lorem ipsum",
-    imagen:"urlImage",
-    precio:125
-  }
+  productos:any;
   productosCarrito:any = [];
   notificacionCarrito:number = 0;
-  constructor() { }
+  idCategoria:any;
+  idEmpresa:any
+  constructor(
+    private categoriaService:CategoriasService,
+    private ruta:ActivatedRoute
+  ) {
+    this.ruta.params.subscribe(params => {
+      this.idCategoria = params.idCategoria;
+      this.idEmpresa = params.idEmpresa
+    });
+  }
 
   ngOnInit(): void {
     let productosLocalStorage:any = [];
@@ -28,22 +34,32 @@ export class ProductosComponent implements OnInit {
       // console.log(productosLocalStorage.length);
       this.notificacionCarrito = productosLocalStorage.length;
     }
+
+    this.categoriaService.obtenerProductos(this.idCategoria,this.idEmpresa).subscribe(
+      res=>{
+        console.log("porductosComponent",res);
+        this.productos = res
+      },
+      error=>{
+        console.error(error);
+      }
+    )
   }
 
-  agregarProductoCarrito(){
+  agregarProductoCarrito(producto){
     console.log('agregar a localstorage');
     this.notificacionCarrito += 1;
     let localStorage = window.localStorage;
     let agregarProducto = {
-      id:this.producto.id,
-      nombre:this.producto.nombre,
-      descripcion:this.producto.descripcion,
-      imagen:this.producto.imagen,
+      id:producto._id,
+      nombre:producto.nombre,
+      descripcion:producto.descripcion,
+      imagen:producto.imagen,
       cantidad:1,
       isv:"15%",
-      precio:125
+      precio:producto.precio
     }
-    
+      
     if (localStorage.getItem('carritoCompras')!=null) {
       this.productosCarrito = JSON.parse(localStorage.getItem('carritoCompras'));
       this.productosCarrito.push(agregarProducto);
@@ -56,3 +72,8 @@ export class ProductosComponent implements OnInit {
     this.OnAgregarCarrito.emit(this.notificacionCarrito);
   }
 }
+
+  // agregarProductoCarrito(){
+  
+  // }
+

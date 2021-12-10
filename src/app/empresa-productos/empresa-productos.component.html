@@ -1,4 +1,4 @@
-<div id="perfil-empresa">
+<div id="perfil-empresa" [style]="{'background-image':empresa.baner}">
     <div id="barra-perfil-empresa" class="py-2 mb-5">
         <div id="flecha-atras" (click) = "back()" class="py-2">
             <div id="atras-icon">
@@ -8,11 +8,11 @@
     </div>
     <div id="informacion-perfil-empresa">
         <div class="imagen-perfil-empresa">
-            <img [src]="empresa.logo" alt="" style="width: 100%;">
+            <img [src]="empresa.imagen" alt="" style="width: 100%;">
         </div>
         <div id="datos-perfil-empresa" class="py-2 pt-2 px-4">
-            <h4 style="font-weight: bold;margin-bottom: 0rem;">{{empresa.nombre}}</h4>
-            <span>{{empresa.email}}</span>
+            <h4 style="font-weight: bold;margin-bottom: 0rem;">{{empresa.nombres}}</h4>
+            <span>{{empresa.correo}}</span>
         </div>
     </div>
     <div style="text-align: center;" class="pt-3">

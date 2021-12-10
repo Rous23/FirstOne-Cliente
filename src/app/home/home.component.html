@@ -6,7 +6,8 @@
         <div id="configuracion" [routerLink]="['/perfil']" routerLinkActive="router-link-active" ><fa-icon [icon] = "faUserCog"></fa-icon></div>
     </div>
     <div id="bienvenida">
-        <p id="saludo">¡Hola Juana!</p>
+        <p id="saludo" *ngIf="nombreCliente">¡Hola {{nombreCliente}}!</p>
+        <p id="saludo" *ngIf="!nombreCliente">¡Hola!</p>
         <p id="pregunta">¿Qué necesitas pedir hoy?</p>
     </div>
     <div id="busqueda">

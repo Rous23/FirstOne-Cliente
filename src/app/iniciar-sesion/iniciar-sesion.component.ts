@@ -3,6 +3,8 @@ import { faGoogle, faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { ClientesService } from '../services/clientes.service';
+import { faThList } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -27,9 +29,11 @@ export class IniciarSesionComponent implements OnInit {
     }
   )
   cookieValue:string;
+  error=false;
   constructor(
     private route:Router, 
-    private cookieService:CookieService
+    private cookieService:CookieService,
+    private clienteService:ClientesService
   ) { }
   faGoogle = faGoogle;
   faFacebookF = faFacebookF;
@@ -46,10 +50,24 @@ export class IniciarSesionComponent implements OnInit {
 
   iniciarSesion(){
     console.log(this.formInicio.value);
-    console.log(this.formInicio.valid);
-    // this.cookieService.set('Test', 'Hello World');
+    this.clienteService.iniciarSesion(this.formInicio.value).subscribe(
+      res=>{
+        console.log(res);
+        if(res!=null){
+          this.cookieService.set('idClienteFirstone', res._id);
+          this.route.navigate(['/home']);
+        }else{
+          this.error=true
+          this.correo.setValue('');
+          this.password.setValue('');
+        }
+      },
+      error=>{
+        console.error(error);
+      }
+    )
     // this.cookieValue = this.cookieService.get('Test');
-    this.route.navigate(['/home']);
+    
 
   }
 
