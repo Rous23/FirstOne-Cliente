@@ -60,27 +60,31 @@
         <div id="formulario-actualizar-datos" class="form-modal">
             <form>
                 <div class="form-group">
-                    <label id="label-nombre" for="input-nombre">Nombre Completo</label>
-                    <input id="input-nombre" type="text" class="form-control" placeholder="Nombre Completo">
+                    <label id="label-nombre" for="input-nombre">Nombre</label>
+                    <input [(ngModel)]="cliente.nombres" id="input-nombre" type="text" class="form-control" name="nombres">
+                </div>
+                <div class="form-group">
+                    <label id="label-apellido" for="input-apellido">Apellido</label>
+                    <input [(ngModel)]="cliente.apellidos" id="input-apellido" type="text" class="form-control" name="apellidos">
                 </div>
                 <div class="form-group">
                     <label id="label-fecha-nacimiento" for="input-fecha-nacimiento">Fecha Nacimiento</label>
-                    <input id="input-fecha-nacimiento" type="date" class="form-control" placeholder="Nombre Completo">
+                    <input [(ngModel)]="cliente.fechaNacimiento" id="input-fecha-nacimiento" type="date" class="form-control" name="fechaNacimiento">
                 </div>
                 <div class="form-group">
                     <label id="label-correo" for="input-correo">Correo electrónico</label>
-                    <input id="input-correo" type="email" class="form-control" placeholder="ejemplo@gmail.com">
+                    <input [(ngModel)]="cliente.correo" id="input-correo" type="email" class="form-control" name="correo">
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label id="label-correo" for="input-imagen">Imagen de Perfil</label>
                     <input type="file" name="profile" (change)="onFileSelect($event)" id="input-imagen"/>
-                </div>
+                </div> -->
                 <!-- <div>
                     <button (click)="onSubmit()">Upload</button>
                 </div> -->
                 <div style="display: flex;justify-content: center;" class="py-3">
                     <button id="cerrar-formulario" type="button" class="btn btn-primary mx-2" (click)="modal.close('cerrar modal')">Cerrar</button>
-                    <button id="actualizar-info" type="button" class="btn btn-primary mx-2" (click)="modal.close('cerrar modal')">Guardar cambios</button>
+                    <button id="actualizar-info" type="button" class="btn btn-primary mx-2" (click)="actualizarCliente()">Guardar cambios</button>
                 </div>
             </form>
         </div>
@@ -97,19 +101,30 @@
     </div>
     <div class="modal-body">
         <div id="formulario-actualizar-contrasenia" class="form-modal">
-            <form>
+            <form [formGroup]="formContrasena">
                 <div class="form-group">
                     <label id="label-contrasenia" for="input-contrasenia">Nueva Contraseña</label>
-                    <input id="input-contrasenia" type="password" class="form-control" placeholder="contraseña">
+                    <input id="input-contrasenia" type="password" class="form-control" formControlName="nuevaContrasena">
                 </div>
-                <div class="form-group">
+                <div *ngIf="nuevaContrasena.invalid && !error" style="color: red;">
+                    <span *ngIf="nuevaContrasena.errors.required">El campo es obligatorio</span>
+                    <span *ngIf="nuevaContrasena.errors.minlength">La contraseña no es correcta.</span>
+                </div>
+                <div class="form-group pt-2">
                     <label id="label-repetir-contrasenia" for="input-repetir-contrasenia">Verificar contraseña</label>
-                    <input id="input-repetir-contrasenia" type="password" class="form-control" placeholder="contraseña">
+                    <input id="input-repetir-contrasenia" type="password" class="form-control" formControlName="nuevaContrasena2">
+                </div>
+                <div *ngIf="nuevaContrasena2.invalid && !error" style="color: red;">
+                    <span *ngIf="nuevaContrasena2.errors.required">El campo es obligatorio</span>
+                    <span *ngIf="nuevaContrasena2.errors.minlength">La contraseña no es correcta.</span>
+                </div>
+                <div *ngIf="error" style="color: red;">
+                    <span>Las contraseñas no coinciden.</span>
                 </div>
                 <div style="display: flex;
                 justify-content: center;" class="py-3">
                     <button id="cerrar-formulario" type="button" class="btn btn-primary mx-2" (click)="modal.close('cerrar modal')">Cerrar</button>
-                    <button id="actualizar-contrasena" type="button" class="btn btn-primary mx-2" (click)="modal.close('cerrar modal')">Guardar contraseña</button>
+                    <button id="actualizar-contrasena" type="button" class="btn btn-primary mx-2" (click)="actualizarContrasena()">Guardar contraseña</button>
                 </div>
             </form>
         </div>
@@ -163,21 +178,31 @@
     <div class="modal-body">
         <div id="formulario-actualizar-direccion" class="form-modal">
             <form>
-                <div class="form-group">
-                    <label id="label-latitud" for="input-latitud">Latitud</label>
-                    <input id="input-latitud" type="number" class="form-control" placeholder="15.4">
-                </div>
-                <div class="form-group">
-                    <label id="label-longitud" for="input-longitud">Longitud</label>
-                    <input id="input-longitud" type="number" class="form-control" placeholder="15.4">
-                </div>
                 <div class="mt-3">
                     <h6 style="font-weight: bold;">Dirección en el Mapa</h6>
-                    <app-map></app-map>
+                    <app-map (onLatLon) = "latlong($event)"></app-map>
+                </div>
+                <div class="form-group py-2" style="display: flex;">
+                    <div class="px-1">
+                        <label id="label-latitud" for="input-latitud">Latitud</label>
+                        <input id="input-latitud" type="text" class="form-control" placeholder="" [(ngModel)]="latitud" name="latitud">
+                    </div>
+                    <div class="px-1">
+                        <label id="label-longitud" for="input-longitud">Longitud</label>
+                        <input id="input-longitud" type="number" class="form-control" placeholder="" [(ngModel)]="longitud" name="longitud">
+                    </div>
+                </div>
+                <div class="form-group px-2" >
+                    <label id="label-direccion" for="input-direccion">Dirección</label>
+                    <input id="input-direccion" type="text" class="form-control" placeholder="Colonia" [(ngModel)]="direccion" name="direccion">
+                </div>
+                <div class="form-group px-2" >
+                    <label id="label-referencia" for="input-referencia">Referencia</label>
+                    <input id="input-referencia" type="text" class="form-control" placeholder="" [(ngModel)]="referencia" name="referencia">
                 </div>
                 <div style="display: flex;justify-content: center;" class="py-3">
                     <button id="cerrar-formulario" type="button" class="btn btn-primary mx-1" (click)="modal.close('cerrar modal')">Cerrar</button>
-                    <button id="actualizar-direccion" type="button" class="btn btn-primary mx-1" (click)="modal.close('cerrar modal')">Guardar cambios</button>
+                    <button id="actualizar-direccion" type="button" class="btn btn-primary mx-1" (click)="guardarDireccion()">Guardar cambios</button>
                 </div>
             </form>
         </div>

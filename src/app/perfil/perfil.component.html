@@ -1,17 +1,17 @@
 <div id="header-perfil">
     <div id="barra-perfil" class="py-2">
-        <div id="flecha-atras">
+        <div id="flecha-atras" (click) = "_back()">
             <fa-icon [icon] = "faArrowLeft" style="color: #8A80FD;font-size:.85rem; margin-left: 10px;"></fa-icon>
         </div>
         <div id="search"><fa-icon [icon] = "faSearch"></fa-icon></div>
     </div>
     <div id="informacion-perfil">
         <div id="imagen-perfil" style="width: 75px;">
-            <img src="../../assets/img/One_User_Orange.png" alt="" style="width: 100%;">
+            <img [src]="imagen" alt="" style="width: 100%;">
         </div>
         <div id="datos-perfil" class="py-2 pt-2 px-4" style="flex:2">
-            <h4 style="font-weight: bold;margin-bottom: 0rem;">Juana Perez</h4>
-            <span>ejemplo@gmail.com</span>
+            <h4 style="font-weight: bold;margin-bottom: 0rem;">{{nombreCliente}}</h4>
+            <span>{{correo}}</span>
         </div>
     </div>
     <div id="baner-perfil">
@@ -37,8 +37,16 @@
 </div>
 
 <main id="main-perfil">
-    <app-informacion-perfil *ngIf="verRegion == 'informacionPersonal'"></app-informacion-perfil>
+    <app-informacion-perfil (onGuardarDatos)="actualizarPagina()" *ngIf="verRegion == 'informacionPersonal'"></app-informacion-perfil>
     <app-empresas-favoritas *ngIf="verRegion == 'empresasFavoritas'"></app-empresas-favoritas>
     <app-historial-ordenes *ngIf="verRegion == 'historialOrdenes'"></app-historial-ordenes>
 </main>
 <app-footer></app-footer>
+<ngx-spinner
+    bdColor="rgba(255,255,255,.9)"
+    size = "large"
+    color = "#FEB949"
+    type="ball-fussion"
+    [fullScreen] = "true"
+    >
+</ngx-spinner>
