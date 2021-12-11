@@ -13,6 +13,10 @@ export class ClientesService {
     return this.httpClient.post(`http://localhost:8888/clientes`, datos);
   }
 
+  registrarse(datos):Observable<any>{
+    return this.httpClient.post(`http://localhost:8888/clientes/registrarse`, datos);
+  }
+
   actualizarImagen(cliente, imagen:File):Observable<any>{
     const formData = new FormData;
     formData.append('imagen', imagen);

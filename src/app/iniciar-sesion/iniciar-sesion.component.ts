@@ -67,8 +67,5 @@ export class IniciarSesionComponent implements OnInit {
       }
     )
     // this.cookieValue = this.cookieService.get('Test');
-    
-
   }
-
 }

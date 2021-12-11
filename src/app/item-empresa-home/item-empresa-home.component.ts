@@ -10,7 +10,7 @@ export class ItemEmpresaHomeComponent implements OnInit {
     {
       id:21,
       nombre:"Walmart",
-      logo:"../../assets/imagenes-empresas/warmart.png",
+      logo:"https://res.cloudinary.com/dekixopkw/image/upload/v1639041859/FirstOne/categorias/empresas/stmeqlhe4itgngikyezf.png",
       banner:"url-banner",
       descripcion:"loremlks askjds ksjhnsd",
       calificacion:4,
@@ -25,7 +25,7 @@ export class ItemEmpresaHomeComponent implements OnInit {
     {
       id:22,
       nombre:"Diunsa",
-      logo:"../../assets/imagenes-empresas/diunsa.png",
+      logo:"https://res.cloudinary.com/dekixopkw/image/upload/v1639038138/FirstOne/categorias/empresas/yqrasq6z322gtxv2kfog.png",
       banner:"url-banner",
       descripcion:"loremlks askjds ksjhnsd",
       calificacion:4,
@@ -40,7 +40,7 @@ export class ItemEmpresaHomeComponent implements OnInit {
     {
       id:23,
       nombre:"MacDonal's",
-      logo:"../../assets/imagenes-empresas/macdonal.png",
+      logo:"https://res.cloudinary.com/dekixopkw/image/upload/v1639041859/FirstOne/categorias/empresas/boyqltekti76yuqazvob.png",
       banner:"url-banner",
       descripcion:"loremlks askjds ksjhnsd",
       calificacion:4,
