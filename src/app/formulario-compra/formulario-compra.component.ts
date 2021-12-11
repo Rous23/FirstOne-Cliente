@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
+import { ClientesService } from '../services/clientes.service';
 
 @Component({
   selector: 'app-formulario-compra',
@@ -10,9 +13,31 @@ export class FormularioCompraComponent implements OnInit {
   mostrarForm = false
   latitud:number =0;
   longitud:number=0;
-  constructor() { }
+  boolean:boolean = false;
+  direccion:String;
+  referencia:String;
+  @Output() onDireccionCliente = new EventEmitter()
+  constructor(
+    private clienteService:ClientesService,
+    private cookieService:CookieService
+  ) { }
 
   ngOnInit(): void {
+    this.clienteService.obtenerDireccion(this.cookieService.get('idClienteFirstone')).subscribe(
+      res=>{
+        if (res.direccionesEntrega.length != 0) {
+          this.boolean = true
+          this.direccion = res.direccionesEntrega.direccion
+          this.latitud = res.direccionesEntrega.latitud
+          this.longitud = res.direccionesEntrega.longitud
+          this.referencia = res.direccionesEntrega.referencia
+          this.onDireccionCliente.emit({direccion:this.direccion, latitud:this.latitud, longitud:this.longitud, referencia:this.referencia})
+        }
+      },
+      error=>{
+        console.error(error);
+      }
+    )
   }
 
   mostrarMapa(){

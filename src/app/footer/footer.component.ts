@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faHome, faClipboardList, faUser, faHeart, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-footer',
@@ -9,7 +10,8 @@ import { faHome, faClipboardList, faUser, faHeart, faShoppingCart } from '@forta
 })
 export class FooterComponent implements OnInit {
 
-  constructor(private route:Router) { }
+  constructor(private route:Router,
+    private cookieService:CookieService) { }
   faHome = faHome
   faClipboardList = faClipboardList
   faUser = faUser
@@ -40,15 +42,21 @@ export class FooterComponent implements OnInit {
   verOrdenes(){
     if(this.iconoActivo != 'ordenes'){
       this.iconoActivo = 'ordenes'
-      console.log("Entro ordenes");
-      this.route.navigate(['/ordenes-pendientes'])
+      if(this.cookieService.get('idClienteFirstone')){
+        this.route.navigate(['/ordenes-pendientes'])
+      }else{
+        this.route.navigate(['/iniciar-sesion'])
+      }
     }
   }
   verPerfil(){
     if(this.iconoActivo != 'perfil'){
-      this.iconoActivo = 'perfil'
-      console.log("Entro perfil");
-      this.route.navigate(['/perfil'])
+      this.iconoActivo = 'perfil';
+      if(this.cookieService.get('idClienteFirstone')){
+        this.route.navigate(['/perfil'])
+      }else{
+        this.route.navigate(['/iniciar-sesion'])
+      }
     }
   }
   verListaDeseos(){
@@ -61,8 +69,11 @@ export class FooterComponent implements OnInit {
   verCarrito(){
     if(this.iconoActivo != 'carrito'){
       this.iconoActivo = 'carrito'
-      console.log("Entro carrito");
-      this.route.navigate(['/carrito'])
+      if(this.cookieService.get('idClienteFirstone')){
+        this.route.navigate(['/carrito'])
+      }else{
+        this.route.navigate(['/iniciar-sesion'])
+      }
     }
   }
 

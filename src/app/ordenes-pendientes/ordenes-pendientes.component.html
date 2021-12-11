@@ -2,149 +2,25 @@
 <main id="main-categoria-empresa" class="my-5">
     <p id="titulo-carrito">Ordenes pendientes</p>
     <div id="productos-orden" class="mb-5"  style="overflow-y:scroll;">
-        <div id="card-historial-ordenes" class="my-2">
+        <div id="card-historial-ordenes" class="my-2" *ngFor="let orden of ordenesPendientes">
             <div class="contenido-card-orden">
-                <span>Codigo: 0000001</span>
-                <span>Estado: pendiente</span>
-                <span>Fecha entrega: 2021/03/23</span>
+                <span>Codigo: {{orden._id}}</span>
+                <span>Estado: {{orden.estado}}</span>
+                <span>Fecha entrega: {{orden.fecha}}</span>
             </div>
             <div class="precio-card-orden">
-                <span style="font-size: 18px;" class="mb-1">L. 230.00</span>
-                <div class="estilo-btn-perfil"><fa-icon [icon] = faChevronRight></fa-icon></div>
-            </div>
-        </div>
-        <div id="card-historial-ordenes" class="mb-2">
-            <div class="contenido-card-orden">
-                <span>Codigo: 0000001</span>
-                <span>Estado: pendiente</span>
-                <span>Fecha entrega: 2021/03/23</span>
-            </div>
-            <div class="precio-card-orden">
-                <span style="font-size: 18px;" class="mb-1">L. 230.00</span>
-                <div class="estilo-btn-perfil"><fa-icon [icon] = faChevronRight></fa-icon></div>
-            </div>
-        </div>
-        <div id="card-historial-ordenes" class="mb-2">
-            <div class="contenido-card-orden">
-                <span>Codigo: 0000001</span>
-                <span>Estado: pendiente</span>
-                <span>Fecha entrega: 2021/03/23</span>
-            </div>
-            <div class="precio-card-orden">
-                <span style="font-size: 18px;" class="mb-1">L. 230.00</span>
-                <div class="estilo-btn-perfil"><fa-icon [icon] = faChevronRight></fa-icon></div>
-            </div>
-        </div>
-        <div id="card-historial-ordenes" class="mb-2">
-            <div class="contenido-card-orden">
-                <span>Codigo: 0000001</span>
-                <span>Estado: pendiente</span>
-                <span>Fecha entrega: 2021/03/23</span>
-            </div>
-            <div class="precio-card-orden">
-                <span style="font-size: 18px;" class="mb-1">L. 230.00</span>
-                <div class="estilo-btn-perfil"><fa-icon [icon] = faChevronRight></fa-icon></div>
-            </div>
-        </div>
-        <div id="card-historial-ordenes" class="mb-2">
-            <div class="contenido-card-orden">
-                <span>Codigo: 0000001</span>
-                <span>Estado: pendiente</span>
-                <span>Fecha entrega: 2021/03/23</span>
-            </div>
-            <div class="precio-card-orden">
-                <span style="font-size: 18px;" class="mb-1">L. 230.00</span>
-                <div class="estilo-btn-perfil"><fa-icon [icon] = faChevronRight></fa-icon></div>
-            </div>
-        </div>
-        <div id="card-historial-ordenes" class="mb-2">
-            <div class="contenido-card-orden">
-                <span>Codigo: 0000001</span>
-                <span>Estado: pendiente</span>
-                <span>Fecha entrega: 2021/03/23</span>
-            </div>
-            <div class="precio-card-orden">
-                <span style="font-size: 18px;" class="mb-1">L. 230.00</span>
-                <div class="estilo-btn-perfil"><fa-icon [icon] = faChevronRight></fa-icon></div>
-            </div>
-        </div>
-        <div id="card-historial-ordenes" class="mb-2">
-            <div class="contenido-card-orden">
-                <span>Codigo: 0000001</span>
-                <span>Estado: pendiente</span>
-                <span>Fecha entrega: 2021/03/23</span>
-            </div>
-            <div class="precio-card-orden">
-                <span style="font-size: 18px;" class="mb-1">L. 230.00</span>
-                <div class="estilo-btn-perfil"><fa-icon [icon] = faChevronRight></fa-icon></div>
-            </div>
-        </div>
-        <div id="card-historial-ordenes" class="mb-2">
-            <div class="contenido-card-orden">
-                <span>Codigo: 0000001</span>
-                <span>Estado: pendiente</span>
-                <span>Fecha entrega: 2021/03/23</span>
-            </div>
-            <div class="precio-card-orden">
-                <span style="font-size: 18px;" class="mb-1">L. 230.00</span>
-                <div class="estilo-btn-perfil"><fa-icon [icon] = faChevronRight></fa-icon></div>
-            </div>
-        </div>
-        <div id="card-historial-ordenes" class="mb-2">
-            <div class="contenido-card-orden">
-                <span>Codigo: 0000001</span>
-                <span>Estado: pendiente</span>
-                <span>Fecha entrega: 2021/03/23</span>
-            </div>
-            <div class="precio-card-orden">
-                <span style="font-size: 18px;" class="mb-1">L. 230.00</span>
-                <div class="estilo-btn-perfil"><fa-icon [icon] = faChevronRight></fa-icon></div>
-            </div>
-        </div>
-        <div id="card-historial-ordenes" class="mb-2">
-            <div class="contenido-card-orden">
-                <span>Codigo: 0000001</span>
-                <span>Estado: pendiente</span>
-                <span>Fecha entrega: 2021/03/23</span>
-            </div>
-            <div class="precio-card-orden">
-                <span style="font-size: 18px;" class="mb-1">L. 230.00</span>
-                <div class="estilo-btn-perfil"><fa-icon [icon] = faChevronRight></fa-icon></div>
-            </div>
-        </div>
-        <div id="card-historial-ordenes" class="mb-2">
-            <div class="contenido-card-orden">
-                <span>Codigo: 0000001</span>
-                <span>Estado: pendiente</span>
-                <span>Fecha entrega: 2021/03/23</span>
-            </div>
-            <div class="precio-card-orden">
-                <span style="font-size: 18px;" class="mb-1">L. 230.00</span>
-                <div class="estilo-btn-perfil"><fa-icon [icon] = faChevronRight></fa-icon></div>
-            </div>
-        </div>
-        <div id="card-historial-ordenes" class="mb-2">
-            <div class="contenido-card-orden">
-                <span>Codigo: 0000001</span>
-                <span>Estado: pendiente</span>
-                <span>Fecha entrega: 2021/03/23</span>
-            </div>
-            <div class="precio-card-orden">
-                <span style="font-size: 18px;" class="mb-1">L. 230.00</span>
-                <div class="estilo-btn-perfil"><fa-icon [icon] = faChevronRight></fa-icon></div>
-            </div>
-        </div>
-        <div id="card-historial-ordenes" class="mb-2">
-            <div class="contenido-card-orden">
-                <span>Codigo: 0000001</span>
-                <span>Estado: pendiente</span>
-                <span>Fecha entrega: 2021/03/23</span>
-            </div>
-            <div class="precio-card-orden">
-                <span style="font-size: 18px;" class="mb-1">L. 230.00</span>
+                <span style="font-size: 18px;" class="mb-1">L. {{orden.total}}</span>
                 <div class="estilo-btn-perfil"><fa-icon [icon] = faChevronRight></fa-icon></div>
             </div>
         </div>
     </div>
     <app-footer></app-footer>
 </main>
+<ngx-spinner
+    bdColor="rgba(255,255,255,.9)"
+    size = "large"
+    color = "#FEB949"
+    type="ball-fussion"
+    [fullScreen] = "true"
+    >
+</ngx-spinner>

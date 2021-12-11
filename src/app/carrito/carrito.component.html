@@ -3,17 +3,15 @@
     <div id="contenedor-productos" class="mt-5">
         <div id="productos-carrito">
             <p id="titulo-carrito">Carrito de compras</p>
-            <div class="carrito my-2" *ngFor="let item of productosLocalStorage">
+            <div class="carrito my-2 px-1" *ngFor="let item of productosLocalStorage">
                 <div class="item" id="item-img">
-                    <img src="../../assets/img/img.svg">
+                    <img [src]="item.imagen" style="max-width: 50px;">
                 </div>
-                <div style="display: flex;
-                flex-direction: column;
-                justify-content: center;">
+                <div style="display: flex;flex-direction: column;justify-content: center;">
                     <div id="item-nombre">
                         {{item.nombre}}
                     </div>
-                    <div id="item-descripcion">
+                    <div id="item-descripcion" style="font-size: 15px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;width: 150px;">
                         {{item.descripcion}}
                     </div>
                     <div id="item-precio">
@@ -39,18 +37,17 @@
                     <p id="pagar-cantidad">L. {{total}}</p>
                 </div>
                 <div id="siguiente">
-                    <button class="btn btn-primary" id="btn-siguiente" (click)="confirmarCompra()">Siguiente</button>
+                    <button class="btn btn-primary" id="btn-siguiente" [disabled] = "!datos" (click)="confirmarCompra()" >Siguiente</button>
                 </div>
             </div>
         </div>
-        <!-- <div class="fixed-bottom" id="total-carrito">
-            <div id="total">
-                <p id="pagar">Total a pagar</p>
-                <p id="pagar-cantidad">$769.00</p>
-            </div>
-            <div id="siguiente">
-                <button class="btn btn-primary" id="btn-siguiente" [routerLink]="['/confirmar-compra']" routerLinkActive="router-link-active" >Siguiente</button>
-            </div>
-        </div> -->
     </div>
 </main>
+<ngx-spinner
+    bdColor="rgba(255,255,255,.9)"
+    size = "large"
+    color = "#FEB949"
+    type="ball-fussion"
+    [fullScreen] = "true"
+    >
+</ngx-spinner>

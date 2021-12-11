@@ -54,4 +54,17 @@ export class ClientesService {
   obtenerDireccion(idCliente):Observable<any>{
     return this.httpClient.get(`http://localhost:8888/clientes/${idCliente}/direccion-entrega`);
   }
+
+  obtenerOrdenesPendientes(idCliente):Observable<any>{
+    return this.httpClient.get(`http://localhost:8888/clientes/${idCliente}/ordenes-pendientes`);
+  }
+
+  obtenerHistorialOrdenes(idCliente):Observable<any>{
+    return this.httpClient.get(`http://localhost:8888/clientes/${idCliente}/historial-ordenes`);
+  }
+
+  guardarOrden(data):Observable<any>{
+    return this.httpClient.post(`http://localhost:8888/clientes/confirmar-compra/`, data);
+  }
+
 }

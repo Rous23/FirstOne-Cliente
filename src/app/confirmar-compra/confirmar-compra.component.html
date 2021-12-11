@@ -4,7 +4,7 @@
         <p id="titulo-confirmar">Confirmar compra</p>
         <div id="informacion-pago">
             <div id="formulario-confirmacion">
-                <app-formulario-compra></app-formulario-compra>
+                <app-formulario-compra (onDireccionCliente)="direccionUsuario($event)"></app-formulario-compra>
             </div>
             <div id="detalle"  style="padding-bottom: 5.3rem;">
                 <p id="texto-detalle">Detalle</p>
@@ -16,10 +16,10 @@
                         <b><p>Total</p></b>
                     </div>
                     <div>
-                        <p>$500.00</p>
-                        <p>$120.00</p>
-                        <p>$25.00</p>
-                        <b><p>$655.00</p></b>
+                        <p>L. {{subTotal}}</p>
+                        <p>L. {{isv}}</p>
+                        <p>L. {{delivery}}</p>
+                        <b><p>L. {{total}}</p></b>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
         <div class="fixed-bottom total-compra pt-3" style="background-color: rgba(254, 185, 73, 0.2);">
             <div id="total">
                 <p id="pagar">Total a pagar</p>
-                <p id="pagar-cantidad">L. total</p>
+                <p id="pagar-cantidad">L. {{total}}</p>
             </div>
             <div id="siguiente">
                 <button class="btn btn-primary" id="btn-siguiente" (click)="ordenRealizada()" [routerLink]="['/compra-exitosa']" routerLinkActive="router-link-active">Siguiente</button>
@@ -37,3 +37,11 @@
         </div>
     </div>
 </main>
+<ngx-spinner
+    bdColor="rgba(255,255,255,.9)"
+    size = "large"
+    color = "#FEB949"
+    type="ball-fussion"
+    [fullScreen] = "true"
+    >
+</ngx-spinner>

@@ -1,12 +1,12 @@
 <div id="historial-ordenes" style="display: flex; flex-direction: column;" class="mb-4 mt-2">
-    <div id="card-historial-ordenes" class="mb-2">
+    <div id="card-historial-ordenes" class="mb-2" *ngFor="let orden of datosHistorial">
         <div class="contenido-card-orden">
-            <span>Codigo: 0000001</span>
-            <span>Estado: entregado</span>
-            <span>Fecha entrega: 2021/03/23</span>
+            <span>Codigo: {{orden._id}}</span>
+            <span>Estado: {{orden._id}}</span>
+            <span>Fecha entrega: {{orden.fecha}}</span>
         </div>
         <div class="precio-card-orden">
-            <span style="font-size: 18px;" class="mb-1">L. 230.00</span>
+            <span style="font-size: 18px;" class="mb-1">L. {{orden.total}}</span>
             <div class="estilo-btn-perfil"><fa-icon [icon] = "faChevronRight"></fa-icon></div>
         </div>
     </div>
