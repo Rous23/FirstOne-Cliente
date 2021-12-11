@@ -5,29 +5,89 @@
     </div>
     <div id="texto-principal" class="mb-3">Registrarse</div>
     <div id="formulario-registrarse">
-        <form>
+        <form [formGroup]="formRegistro">
             <div class="form-group">
-                <label id="label-nombre" for="input-nombre">Nombre Completo</label>
-                <input id="input-nombre" type="text" class="form-control" placeholder="Nombre Completo">
+                <label class="labels" id="label-nombres" for="input-nombres">Nombres</label>
+                <input formControlName="nombres" id="input-nombres" type="text" class="form-control" placeholder="Nombres" [ngClass]="{'is-invalid': nombres.invalid && (nombres.dirty || nombres.touched), 'is-valid': nombres.valid}">
+                <div *ngIf="nombres.invalid && (nombres.dirty || nombres.touched)" style="color: red;">
+                    <span *ngIf="nombres.errors.required">El campo es obligatorio</span>
+                    <span *ngIf="nombres.errors.maxlength">Maximo de carcteres alcanzados.</span>
+                </div>
             </div>
             <div class="form-group">
-                <label id="label-fecha-nacimiento" for="input-fecha-nacimiento">Fecha Nacimiento</label>
-                <input id="input-fecha-nacimiento" type="date" class="form-control" placeholder="Nombre Completo">
+                <label class="labels" id="label-apellidos" for="input-nombres">Apellidos</label>
+                <input formControlName="apellidos" id="input-apellidos" type="text" class="form-control" placeholder="Apellidos" [ngClass]="{'is-invalid': apellidos.invalid && (apellidos.dirty || apellidos.touched), 'is-valid': apellidos.valid}">
+                <div *ngIf="apellidos.invalid && (apellidos.dirty || apellidos.touched)" style="color: red;">
+                    <span *ngIf="apellidos.errors.required">El campo es obligatorio</span>
+                    <span *ngIf="apellidos.errors.maxlength">Maximo de carcteres alcanzados.</span>
+                </div>
             </div>
             <div class="form-group">
-                <label id="label-correo" for="input-correo">Correo electrónico</label>
-                <input id="input-correo" type="email" class="form-control" placeholder="ejemplo@gmail.com">
+                <label class="labels" id="label-usuario" for="input-usuario">Usuario</label>
+                <input formControlName="usuario" id="input-usuario" type="text" class="form-control" placeholder="@usuario" [ngClass]="{'is-invalid': usuario.invalid && (usuario.dirty || usuario.touched), 'is-valid': usuario.valid}">
+                <div *ngIf="usuario.invalid && (usuario.dirty || usuario.touched)" style="color: red;">
+                    <span *ngIf="usuario.errors.required">El campo es obligatorio</span>
+                    <span *ngIf="usuario.errors.maxlength">Maximo de carcteres alcanzados.</span>
+                </div>
             </div>
             <div class="form-group">
-                <label id="label-contrasenia" for="input-contrasenia">Contraseña</label>
-                <input id="input-contrasenia" type="password" class="form-control" placeholder="contraseña">
+                <label class="labels" id="label-fecha-nacimiento" for="input-fecha-nacimiento">Fecha Nacimiento</label>
+                <input formControlName="fechaNacimiento" id="input-fecha-nacimiento" type="date" class="form-control" placeholder="Nombre Completo" [ngClass]="{'is-invalid': fechaNacimiento.invalid && (fechaNacimiento.dirty || fechaNacimiento.touched), 'is-valid': fechaNacimiento.valid}">
+                <div *ngIf="fechaNacimiento.invalid && (fechaNacimiento.dirty || fechaNacimiento.touched)" style="color: red;">
+                    <span *ngIf="fechaNacimiento.errors.required">El campo es obligatorio</span>
+                </div>
             </div>
             <div class="form-group">
-                <label id="label-repetir-contrasenia" for="input-repetir-contrasenia">Contraseña</label>
-                <input id="input-repetir-contrasenia" type="password" class="form-control" placeholder="contraseña">
+                <label class="labels" id="label-genero" for="input-genero">Genero</label>
+                <select class="browser-default custom-select form-control" id="input-genero" formControlName="genero" [ngClass]="{'is-invalid': genero.invalid && (genero.dirty || genero.touched), 'is-valid': genero.valid}">
+                    <option selected="true" disabled>seleccione su genero</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                </select>
+                <div *ngIf="genero.invalid && (genero.dirty || genero.touched)" style="color: red;">
+                    <span *ngIf="genero.errors.required">El campo es obligatorio</span>
+                    <span *ngIf="genero.errors.maxlength">Maximo de carcteres alcanzados.</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="labels" id="label-telefono" for="input-telefono">Telefono</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1" style="background-color: transparent; border-color: rgba(254, 185, 73, 0.5);border-width: 2px;padding: 0.3rem; color: grey">+504</span>
+                    </div>
+                    <input formControlName="telefono" id="input-telefono" type="text" class="form-control" placeholder="9999-9999" [ngClass]="{'is-invalid': telefono.invalid && (telefono.dirty || telefono.touched), 'is-valid': telefono.valid}">
+                </div>               
+                <div *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)" style="color: red;">
+                    <span *ngIf="telefono.errors.required">El campo es obligatorio</span>
+                    <span *ngIf="telefono.errors.maxlength">Maximo de carcteres alcanzados.</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="labels" id="label-correo" for="input-correo">Correo electrónico</label>
+                <input formControlName="correo" id="input-correo" type="email" class="form-control" placeholder="ejemplo@gmail.com" [ngClass]="{'is-invalid': correo.invalid && (correo.dirty || correo.touched), 'is-valid': correo.valid}">
+                <div *ngIf="correo.invalid && (correo.dirty || correo.touched)" style="color: red;">
+                    <span *ngIf="correo.errors.required">El campo es obligatorio</span>
+                    <span *ngIf="correo.errors.pattern">El correo no es válido</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="labels" id="label-contrasenia" for="input-contrasenia">Contraseña</label>
+                <input formControlName="password" id="input-contrasenia" type="password" class="form-control" placeholder="contraseña" [ngClass]="{'is-invalid': password.invalid && (password.dirty || password.touched), 'is-valid': password.valid}">
+                <div *ngIf="password.invalid && (password.dirty || password.touched)" style="color: red;">
+                    <span *ngIf="password.errors.required">El campo es obligatorio</span>
+                    <span *ngIf="password.errors.minlength">La contraseña no es correcta.</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="labels" id="label-repetir-contrasenia" for="input-repetir-contrasenia">Contraseña</label>
+                <input formControlName="password2" id="input-repetir-contrasenia" type="password" class="form-control" placeholder="contraseña" [ngClass]="{'is-invalid': password2.invalid && (password2.dirty || password2.touched), 'is-valid': password2.valid}">
+                <div *ngIf="password2.invalid && (password2.dirty || password2.touched)" style="color: red;">
+                    <span *ngIf="password2.errors.required">El campo es obligatorio</span>
+                    <span *ngIf="password2.errors.minlength">La contraseña no es correcta.</span>
+                </div>
             </div>
             <div>
-                <button id="boton-registrarse" type="button" class="btn btn-primary" href="#">Registrarse</button>
+                <button id="boton-iniciar-sesion" type="button" class="btn btn-primary all-btn font-weight-bold py-1" (click)="registrarUsuario()" [disabled] = "!formRegistro.valid">Registrate</button>
             </div>
             <div id="texto-iniciar">
                 <h6>¿Ya tienes cuenta? </h6>

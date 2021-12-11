@@ -31,10 +31,26 @@ export class FormularioCompraComponent implements OnInit {
           this.latitud = res.direccionesEntrega.latitud
           this.longitud = res.direccionesEntrega.longitud
           this.referencia = res.direccionesEntrega.referencia
-          this.onDireccionCliente.emit({direccion:this.direccion, latitud:this.latitud, longitud:this.longitud, referencia:this.referencia})
+          this.onDireccionCliente.emit(
+            {
+              direccion:this.direccion,
+              latitud:this.latitud,
+              longitud:this.longitud,
+              referencia:this.referencia
+            }
+          )
+        }else{
+          this.onDireccionCliente.emit(
+            {
+              direccion:this.direccion,
+              latitud:this.latitud,
+              longitud:this.longitud,
+              referencia:this.referencia
+            }
+          )
         }
       },
-      error=>{
+      error=>{        
         console.error(error);
       }
     )

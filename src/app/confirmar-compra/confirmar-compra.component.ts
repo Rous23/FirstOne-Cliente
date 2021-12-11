@@ -51,6 +51,8 @@ export class ConfirmarCompraComponent implements OnInit {
 
   direccionUsuario(event){
     this.usuarioDireccion = event
+    console.log(event);
+    
   }
 
   ordenRealizada(){
@@ -67,10 +69,12 @@ export class ConfirmarCompraComponent implements OnInit {
       "latitud": this.usuarioDireccion.latitud,
       "productos": this.datosCompra.productos
     }
-
+    
+    console.log(enviarOrden);
     this.clienteService.guardarOrden(enviarOrden).subscribe(
       res=>{
         console.log(res);
+        this.route.navigate(['/compra-exitosa'])
       },
       error=>{
         console.error(error);
